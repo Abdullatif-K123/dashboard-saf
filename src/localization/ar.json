@@ -1,0 +1,521 @@
+{
+  "navLink": {
+    "home": "سفرة بنقرة",
+    "branches": "الفروع",
+    "models": "نماذج الحافلات",
+    "buses": "الحافلات",
+    "tours": "الرحلات",
+    "customers": "الزبائن",
+    "permissions": "الصلاحيات",
+    "owners": "أصحاب المكاتب",
+    "accounting": "المالية",
+    "cash": "مالية الكاش",
+    "online": "مالية الدفع الإلكتروني",
+    "reports": "التقارير",
+    "admins": "المشرفين",
+    "files": "الملفات",
+    "administrators": "الملفات",
+    "settings": "الإعدادات",
+    "countries": "البلدان",
+    "cities": "المدن",
+    "regions": "المناطق",
+    "about": "حول التطبيق",
+    "version": "اصدارات التطبيق",
+    "policy": "السياسات والخصوصية",
+    "general": "إعدادات عامة",
+    "403": "ممنوع الوصول"
+  },
+  "copyToClipboard": {
+    "success": "تم نسخ للحافظة",
+    "error": "حدث خطأ ما!"
+  },
+  "generic": {
+    "action": "خيارات",
+    "remove": "إزالة",
+    "block": "حظر",
+    "unblock": "إزالة الحظر",
+    "add": "إضافة",
+    "edit": "تعديل",
+    "showMore": "عرض التفاصيل",
+    "showLess": "إخفاء التفاصيل",
+    "details": "عرض التفاصيل",
+    "cancel": "إلغاء",
+    "from": "من",
+    "to": "إلى",
+    "logout": "تسجيل خروج",
+    "submit": "حفظ",
+    "pagination": "{{from}} - {{to}} من {{count}}",
+    "newUpdate": "يتوفر نسخة جديدة للتطبيق",
+    "update": "تحديث التطبيق",
+    "yes": "نعم",
+    "no": "لا",
+    "confirm": "تأكيد"
+  },
+
+  "login": {
+    "title": "تسجيل الدخول",
+    "remember": "تذكرني",
+    "submit": "تسجيل الدخول"
+  },
+  "validation": {
+    "required": "الحقل مطلوب",
+    "minStr": "يجب ان تكون على الاقل {{value}} حرف",
+    "maxStr": "يجب ان تكون على الاكثر {{value}} حرف",
+    "minArr": "اختر {{value}} على الأقل",
+    "maxArr": "اختر {{value}} على الأكثر",
+    "phoneNumber": "يجب ان يكون رقم هاتف سوري",
+    "nationalNumber": "الرقم الوطني غير صالح",
+    "recordType": "لا يمكن استخدام القيمة \"بالانتظار\""
+  },
+  "error": {
+    "notFound": "لم يتم العثور 404",
+    "sorry": "عذراً",
+    "somethingWentWrong": "حدث خطأ ما، يرجى إعادة المحاولة مرة أخرى",
+    "retry": "إعادة المحاولة مرة أخرى",
+    "backToHome": "عودة للرئيسية",
+    "noData": "لا يوجد بيانات",
+    "accessDenied": "ممنوع الوصول",
+    "noPermission": "ليس لديك وصول لهذه العملية"
+  },
+  "enum": {
+    "Userkind": {
+      "Admin": "مشرف",
+      "Owner": "مالك",
+      "Customer": "زبون",
+      "Cp": "Cp",
+      "Checker": "Checker",
+      "Responsible": "Responsible",
+      "OwnerStaff": "موظف"
+    },
+    "AdminType": {
+      "Cp": "Cp",
+      "Checker": "Checker",
+      "Responsible": "Responsible"
+    },
+    "RecordType": {
+      "Pending": "بالانتظار",
+      "Accepted": "مقبول",
+      "Rejected": "مرفوض"
+    },
+    "TourStatus": {
+      "Finished": "منتهية",
+      "Ongoing": "جارية",
+      "UpComing": "قادمة"
+    },
+    "BookingType": {
+      "App": "من التطبيق",
+      "Office": "من المكتب"
+    },
+    "Gender": { "Male": "ذكر", "Female": "انثى" },
+    "PaidType": { "Paid": "مدفوع", "UnPaid": "غير مدفوع" }
+  },
+  "account": {
+    "userName": "اسم المستخدم",
+    "name": "الاسم",
+    "firstName": "الاسم",
+    "lastName": "الكنية",
+    "phoneNumber": "رقم الموبايل",
+    "rolesName": "الصلاحيات",
+    "password": "كلمة المرور",
+
+    "add": "إضافة حساب",
+    "edit": "تعديل الحساب",
+    "remove": "إزالة الحساب",
+    "validation": {
+      "userName": "يجب ان يكون بالانجليزية او ارقام او _ - وبدون فراغات",
+      "phoneNumber": "يجب ان يكون رقم هاتف سوري",
+      "password": "يجب أن تحوي على الأقل على حرف كبير، حرف صغير، حرف خاص، رقم"
+    },
+
+    "message": {
+      "add": "تم إضافة الحساب بنجاح",
+      "edit": "تم تعديل الحساب بنجاح",
+      "remove": "تم إزالة الحساب بنجاح"
+    }
+  },
+  "home": {
+    "ownerCount": "المالكين",
+    "customerCount": "الزبائن",
+    "branchCount": "الفروع",
+    "tourCount": "الرحلات",
+    "goToPage": "الذهاب إلى الصفحة",
+    "stats": { "title": "الرحلات", "branch": "الفرع" },
+    "branch": {
+      "title": "أحدث خمس فروع",
+      "name": "اسم الفرع",
+      "phoneNumber": "رقم الموبايل",
+      "more": "المزيد",
+      "ownerName": "المالك"
+    },
+    "customer": {
+      "title": "أحدث خمس زبائن",
+      "name": "الاسم",
+      "more": "المزيد",
+      "gender": "الجنس",
+      "phoneNumber": "رقم الموبايل"
+    },
+    "owner": {
+      "title": "أحدث خمس مالكين",
+      "name": "الاسم",
+      "more": "المزيد",
+      "gender": "الجنس",
+      "phoneNumber": "رقم الموبايل"
+    },
+    "tour": {
+      "title": "أحدث خمس رحلات",
+      "noData": "لا يوجد رحلات حالياً...",
+
+      "name": "اسم الرحلة",
+      "branchName": "الفرع",
+      "time": "الوقت",
+      "more": "المزيد",
+      "leaveDate": "الانطلاق",
+      "arriveDate": "الوصول"
+    }
+  },
+  "branch": {
+    "name": "الاسم",
+    "phoneNumber": "رقم الموبايل",
+    "landLineNumber": "رقم الأرضي",
+    "toursCount": "عدد الرحلات",
+    "location": "الموقع",
+    "creationDate": "تاريخ الإنشاء",
+    "owner": "المالك",
+
+    "recordType": "الحالة",
+    "filter": {
+      "region": "المنطقة",
+      "owner": "المالك",
+      "recordType": "الحالة"
+    },
+    "details": {
+      "title": "تفاصيل الفرع",
+      "name": "الاسم",
+      "address": "العنوان",
+      "phoneNumber": "رقم الموبايل",
+      "anotherPhoneNumber": "رقم الموبايل البديل",
+      "landLineNumber": "رقم الأرضي",
+      "anotherLandLineNumber": "رقم الأرضي البديل",
+      "location": "الموقع",
+      "ownerName": "المالك",
+      "ownerPhoneNumber": "رقم موبايل المالك"
+    },
+
+    "rejectingReason": "سبب الرفض",
+
+    "changeRecord": "تغيير الحالة",
+    "record": "تغيير حالة الفرع \"{{name}}\"",
+    "remove": "إزالة الفرع",
+    "message": {
+      "record": "تم تغيير حالة الفرع بنجاح",
+      "remove": "تم إزالة الفرع بنجاح"
+    }
+  },
+
+  "country": {
+    "name": "البلد",
+    "cityCount": "عدد المدن",
+
+    "add": "إضافة بلد",
+    "edit": "تعديل البلد",
+    "remove": "إزالة البلد",
+
+    "message": {
+      "add": "تم إضافة البلد بنجاح",
+      "edit": "تم تعديل البلد بنجاح",
+      "remove": "تم إزالة البلد بنجاح"
+    }
+  },
+  "city": {
+    "name": "اسم المدينة",
+    "cityName": "المدينة",
+    "countryName": "البلد",
+    "regionCount": "عدد المناطق",
+    "location": "الموقع",
+    "latitude": "خط العرض",
+    "longitude": "خط الطول",
+
+    "add": "إضافة مدينة",
+    "edit": "تعديل المدينة",
+    "remove": "إزالة المدينة",
+
+    "message": {
+      "add": "تم اضافة المدينة بنجاح",
+      "edit": "تم تعديل المدينة بنجاح",
+      "remove": "تم إزالة المدينة بنجاح"
+    }
+  },
+  "region": {
+    "name": "اسم المنطقة",
+    "regionName": "المنطقة",
+    "cityName": "المدينة",
+    "countryName": "البلد",
+
+    "add": "إضافة منطقة",
+    "edit": "تعديل المنطقة",
+    "remove": "إزالة المنطقة",
+
+    "message": {
+      "add": "تم إضافة المنطقة بنجاح",
+      "edit": "تم تعديل المنطقة بنجاح",
+      "remove": "تم إزالة المنطقة بنجاح"
+    }
+  },
+  "owner": {
+    "name": "الاسم",
+    "phoneNumber": "رقم الموبايل",
+    "branchesNumber": "عدد الفروع",
+    "gender": "الجنس",
+    "nationalNumber": "الرقم الوطني",
+    "blockState": "حالة الحظر",
+    "changeBlock": "تغيير الحالة",
+    "creationDate": "تاريخ الإنشاء",
+    "recordType": "الحالة",
+    "record": "تغيير حالة المالك \"{{name}}\"",
+    "cause": "سبب الرفض",
+    "changeRecord": "تغيير الحالة",
+    "details": {
+      "title": "تفاصيل المالك",
+      "gender": "الجنس",
+      "fullName": "الاسم",
+      "phoneNunber": "رقم الموبايل",
+      "recordType": "الحالة",
+      "nationalNumber": "الرقم الوطني"
+    },
+    "isBlocked": "محظور",
+    "isNotBlocked": "غير محظور",
+
+    "block": "حظر المالك",
+    "unblock": "إزالة الحظر عن المالك",
+
+    "message": {
+      "block": "تم حظر المالك بنجاح",
+      "unblock": "تم فك حظر المالك بنجاح",
+      "record": "تم تغيير حالة المالك بنجاح"
+    }
+  },
+  "model": {
+    "name": "الاسم",
+    "module": "التصميم",
+    "chairCount": "عدد المقاعد",
+    "busCount": "عدد الباصات",
+    "columns": "عدد الأعمدة",
+    "rows": "عدد السطور",
+    "add": "إضافة نموذج",
+    "edit": "تعديل النموذج",
+    "remove": "إزالة النموذج",
+    "tooltip": {
+      "chairRemover": "قم بسحب مقعد إلى هنا لأزالته"
+    },
+    "message": {
+      "add": "تم اضافة النموذج بنجاح",
+      "edit": "تم تعديل النموذج بنجاح",
+      "remove": "تم إزالة النموذج بنجاح"
+    },
+    "validation": {
+      "cannotBeEmpty": "النموذج لا يمكن أن لا يحوي مقاعد"
+    }
+  },
+  "bus": {
+    "name": "الاسم",
+    "number": "الرقم",
+    "chairCount": "عدد المقاعد",
+    "location": "الموقع",
+    "branchName": "الفرع",
+    "ownerName": "المالك",
+    "ownerPhoneNumber": "رقم موبايل المالك",
+
+    "filter": {
+      "region": "المنطقة",
+      "city": "المدينة",
+      "owner": "المالك",
+      "branch": "الفرع"
+    },
+
+    "details": {
+      "title": "تفاصيل الحافلة",
+      "name": "الاسم",
+      "number": "الرقم",
+      "chairCount": "عدد المقاعد",
+      "busPhotoUrl": "صورة الحافلة",
+      "platePhotoUrl": "صورة النمرة",
+      "branchName": "الفرع",
+      "ownerName": "المالك"
+    },
+
+    "message": {
+      "remove": "تم إزالة الحافلة بنجاح"
+    }
+  },
+  "tour": {
+    "name": "الاسم",
+    "number": "الرقم",
+    "branchName": "الفرع",
+    "ownerName": "المالك",
+    "tourStatus": "الحالة",
+    "customersCount": "عدد الزبائن",
+    "chairPrice": "سعر المقعد",
+
+    "details": {
+      "title": "تفاصيل الرحلة",
+      "name": "الاسم",
+      "number": "الرقم",
+      "chairPrice": "سعر المقعد",
+      "leaveDate": "تاريخ الانطلاق",
+      "arriveDate": "تاريخ الوصول",
+      "tourStatus": "حالة الرحلة",
+      "branchName": "الفرع",
+      "busName": "الحافلة",
+      "driverName": "السائق",
+      "driverphoneNumber": "رقم موبايل السائق",
+      "anotherDriverphoneNumber": "رقم موبايل السائق البديل",
+      "coDriverName": "المعاون",
+      "coDriverPhoneNumber": "رقم موبايل المعاون",
+      "anotherCoDriverPhoneNumber": "رقم موبايل المعاون البديل",
+      "tourCities": {
+        "cityName": "المدينة",
+        "time": "وقت الوصول",
+        "breakTime": "الاستراحة",
+        "noBreak": "لا يوجد"
+      }
+    },
+    "reservationButton": "عرض الحجوزات",
+    "reservation": {
+      "startCanceling": "إلغاء حجز",
+      "stopCanceling": "تراجع",
+      "saveCanceling": "حفظ إلغاء الحجوزات",
+
+      "chairNumber": "المقعد",
+      "firstName": "الاسم",
+      "lastName": "الكنية",
+      "gender": "الجنس",
+      "phoneNumber": "رقم الموبايل",
+      "nationalNumber": "الرقم الوطني",
+      "code": "رقم الحجز",
+      "bookingType": "نوع الحجز",
+      "isPaid": "تم الدفع",
+      "customerName": "صاحب الحجز",
+      "customerPhoneNumber": "رقم موبايل صاحب الحجز",
+      "message": {
+        "add": "حجز مقعد جديد",
+        "edit": "معلومات الزبون",
+        "success": {
+          "add": "تم حجز مقعد للزبون",
+          "edit": "تم اضافة بيانات الزبون"
+        }
+      },
+      "action": {}
+    }
+  },
+  "customer": {
+    "name": "الزبون",
+    "phoneNumber": "رقم الموبايل",
+    "branchesNumber": "عدد الفروع",
+    "recordType": "الحالة",
+    "pageNumber": "رقم الصفحة",
+    "pageSize": "حجم الصفحة",
+    "gender": "الجنس",
+    "creationDate": "تاريخ الإنشاء",
+    "blockState": "حالة الحظر",
+    "changeBlock": "تغيير الحالة",
+    "record": "تغيير حالة الزبون \"{{name}}\"",
+    "toursCount": "عدد الرحلات",
+    "cause": "سبب الرفض",
+    "changeRecord": "تغيير الحالة",
+    "isBlocked": "محظور",
+    "isNotBlocked": "غير محظور",
+
+    "block": "حظر الزبون",
+    "unblock": "إزالة الحظر عن الزبون",
+
+    "details": {
+      "title": "تفاصيل الزبون",
+      "gender": "الجنس",
+      "fullName": "الاسم",
+      "recordType": "الحالة",
+      "phoneNunber": "رقم الموبايل",
+      "nationalNumber": "الرقم الوطني",
+      "frontalIdentityUrl": "صورة الهوية (أمامية)",
+      "backgroundIdentityUrl": "صورة الهوية (خلفية)"
+    },
+
+    "message": {
+      "record": "تم تغيير حالة الزبون بنجاح",
+      "block": "تم حظر الزبون بنجاح",
+      "unblock": "تم فك حظر الزبون بنجاح"
+    }
+  },
+  "file": {
+    "removeUnUsed": "مسح الملفات غير المستخدمة",
+    "message": {
+      "remove": "تم مسح الملفات غير المستخدمة بنجاح"
+    }
+  },
+  "accounting": {
+    "customerName": "اسم الزبون",
+    "tourName": "الرحلة",
+    "branchName": "الفرع",
+    "tourArriveDate": "تاريخ الوصول",
+    "tourLeaveDate": "تاريخ الإنطلاق",
+    "companyPrice": "مبلغ الشركة",
+    "ownerPrice": "مبلغ المالك",
+    "isCompanyConfirm": "تأكيد الشركة",
+    "isOwnerConfirm": "تأكيد المالك",
+    "payementType": "طريقة الدفع",
+    "receivedConfirm": "تأكيد الاستلام",
+    "received": "تم الاستلام",
+    "confirmText": "هل أنت متأكد من الاستلام؟",
+    "actionSuccess": "تم تأكيد الاستلام بنجاح",
+    "selectToRecieve": "تحديد للاستلام",
+    "disabledTourSelectionTooltip": "تم استلام هذه الرحلة مسبقا",
+    "tourSelectionTooltip": "تحديد الرحلة للاستلام"
+  },
+  "settings": {
+    "about": {
+      "message": {
+        "success": "تم تحديث حول التطبيق بنجاح"
+      }
+    },
+    "policy": {
+      "message": {
+        "success": "تم تحديث السياسات والخصوصية بنجاح"
+      }
+    },
+    "general": {
+      "companyRatio": "رسوم الشركة",
+      "serviceRatio": "رسوم الخدمة",
+      "message": { "edit": "تم تعديل رسوم الشركة بنجاح" }
+    },
+    "version": {
+      "title": "تفاصيل الإصدار",
+      "add": "إضافة معلومات الإصدار",
+      "edit": "تعديل معلومات الإصدار",
+      "currentVersionLabel": "الإصدار الحالي",
+      "minimumVersionLabel": "الإصدار الأدنى",
+      "errorMessageRequired": "كلا الحقلين مطلوبان.",
+      "successMessageUpdated": "تم تحديث معلومات الإصدار بنجاح!",
+      "errorMessageFailed": "فشل في تحديث معلومات الإصدار. يرجى المحاولة مرة أخرى.",
+      "submitButton": "إرسال",
+      "message": {
+        "add": "تم اضافة الاصدار الجديد",
+        "edit": "تم تحديث الاصدار"
+      }
+    }
+  },
+  "permissions": {
+    "root": "الصلاحيات",
+    "roleName": "الدور",
+    "contents": "الأقسام",
+    "editePermissions": "تعديل الصلاحيات",
+    "permissionSearch": "بحث في الصلاحيات",
+    "addPermission": "إضافة",
+    "editPermission": "تعديل",
+    "deletePermission": "حذف",
+    "downloadPermission": "تحميل",
+    "viewPermission": "عرض",
+    "message": {
+      "edit": "تم تعديل الصلاحيات بنجاح",
+      "noSearchResult": "لا يوجد صلاحيات مطابقة"
+    }
+  }
+}

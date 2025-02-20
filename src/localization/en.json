@@ -1,0 +1,516 @@
+{
+  "navLink": {
+    "home": "Safra Binakra",
+    "branches": "Branches",
+    "models": "Bus Models",
+    "buses": "Buses",
+    "tours": "Trips",
+    "customers": "Customers",
+    "permissions": "Permissions",
+    "owners": "Owners",
+    "accounting": "Accounting",
+    "cash": "Accounting Cash",
+    "online": "Accounting Online",
+    "reports": "Reports",
+    "admins": "Admins",
+    "files": "Files",
+    "settings": "Settings",
+    "countries": "Countries",
+    "cities": "Cities",
+    "regions": "Regions",
+    "about": "About App",
+    "version": "Versions App",
+    "policy": "Policies and Privacy",
+    "general": "General Settings",
+    "403": "Access Denied"
+  },
+  "copyToClipboard": {
+    "success": "Copied to clipboard!",
+    "error": "Something Went Wrong!"
+  },
+  "generic": {
+    "action": "Options",
+    "remove": "Remove",
+    "block": "Block",
+    "unblock": "Unblock",
+    "showMore": "Show more",
+    "showLess": "Show less",
+    "add": "Add",
+    "edit": "Edit",
+    "details": "Details",
+    "cancel": "Cancel",
+    "from": "From",
+    "to": "To",
+    "logout": "Logout",
+    "submit": "Save",
+    "pagination": "{{from}} - {{to}} of {{count}}",
+    "newUpdate": "New version is available",
+    "update": "Update App",
+    "yes": "Yes",
+    "no": "No",
+    "confirm": "Confirm"
+  },
+
+  "login": {
+    "title": "Login",
+    "remember": "Remember me",
+    "submit": "login"
+  },
+  "validation": {
+    "required": "required field",
+    "minStr": "Must be at least {{value}} characters",
+    "maxStr": "Must be at most {{value}} characters",
+    "minArr": "Choose {{value}} at least",
+    "maxArr": "Choose {{value}} at most",
+    "phoneNumber": "must be a Syrian phone number",
+    "nationalNumber": "invalid national number",
+    "recordType": "cannot select \"Pending\""
+  },
+  "error": {
+    "notFound": "Not Found 404",
+    "noData": "No Data",
+    "sorry": "Sorry",
+    "somethingWentWrong": "Something went wrong, please try again",
+    "retry": "Retry again",
+    "backToHome": "Back to Home",
+    "accessDenied": "Access Denied",
+    "noPermission": "You do not have access to this process"
+  },
+  "enum": {
+    "Userkind": {
+      "Admin": "Admin",
+      "Owner": "Owner",
+      "Customer": "Customer",
+      "Cp": "Control Panel",
+      "Checker": "Checker",
+      "Responsible": "Responsible",
+      "OwnerStaff": "Owner Staff"
+    },
+    "AdminType": {
+      "Cp": "Control Panel",
+      "Checker": "Checker",
+      "Responsible": "Responsible"
+    },
+    "RecordType": {
+      "Pending": "Pending",
+      "Accepted": "Accepted",
+      "Rejected": "Rejected"
+    },
+    "TourStatus": {
+      "Finished": "Finished",
+      "Ongoing": "On Going",
+      "UpComing": "Up Coming"
+    },
+    "BookingType": {
+      "App": "Application",
+      "Office": "Office"
+    },
+    "Gender": { "Male": "Male", "Female": "Female" },
+    "PaidType": { "Paid": "Paid", "UnPaid": "Not Paid" }
+  },
+  "account": {
+    "userName": "Username",
+    "name": "Name",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "phoneNumber": "Phone number",
+    "rolesName": "Roles",
+    "password": "Password",
+
+    "add": "Add account",
+    "edit": "Edit account",
+    "remove": "Remove account",
+    "validation": {
+      "userName": "must be in english, number or _ -",
+      "phoneNumber": "must be a Syrian phone number",
+      "password": "must contain at least one: upper case, lower case, digit, special character"
+    },
+
+    "message": {
+      "add": "Account added successfully",
+      "edit": "Account edited successfully",
+      "remove": "Account removed successfully"
+    }
+  },
+  "home": {
+    "ownerCount": "Owners",
+    "customerCount": "Customers",
+    "branchCount": "Branches",
+    "tourCount": "Trips",
+    "goToPage": "Go To Page",
+    "stats": { "title": "Trips", "branch": "branch" },
+    "branch": {
+      "title": "Newest 5 Branches",
+      "name": "Branch name",
+      "phoneNumber": "Phone number",
+      "more": "More",
+      "ownerName": "Owner"
+    },
+    "customer": {
+      "title": "Newest 5 Customers",
+      "name": "Name",
+      "more": "More",
+      "gender": "Gender",
+      "phoneNumber": "Phone number"
+    },
+    "owner": {
+      "title": "Newest 5 Owners",
+      "name": "Name",
+      "more": "More",
+      "gender": "Gender",
+      "phoneNumber": "Phone number"
+    },
+    "tour": {
+      "title": "Latest 5 Trips",
+      "noData": "No trips for now...",
+
+      "name": "Trip name",
+      "branchName": "Branch",
+      "time": "Time",
+      "more": "More",
+      "leaveDate": "Departure",
+      "arriveDate": "Arrival"
+    }
+  },
+  "branch": {
+    "name": "Name",
+    "phoneNumber": "Phone number",
+    "landLineNumber": "Landline number",
+    "toursCount": "Trips count",
+    "location": "Location",
+    "owner": "Owner",
+    "creationDate": "Creation Date",
+    "recordType": "Status",
+    "filter": {
+      "region": "Region",
+      "owner": "Owner",
+      "recordType": "Status"
+    },
+    "details": {
+      "title": "Branch Details",
+      "name": "Name",
+      "address": "Address",
+      "phoneNumber": "Phone number",
+      "anotherPhoneNumber": "Alternative phone number",
+      "landLineNumber": "Landline number",
+      "anotherLandLineNumber": "Alternative landline number",
+      "location": "Location",
+      "ownerName": "Owner",
+      "ownerPhoneNumber": "Owner's phone number"
+    },
+
+    "rejectingReason": "Rejection reason",
+
+    "changeRecord": "Change Status",
+    "record": "Change {{name}}'s status",
+    "remove": "Remove Branch",
+    "message": {
+      "record": "Branch's status updated successfully",
+      "remove": "Branch removed successfully"
+    }
+  },
+
+  "country": {
+    "name": "Country's name",
+    "cityCount": "Cities count",
+
+    "add": "Add country",
+    "edit": "Edit country",
+    "remove": "Remove country",
+
+    "message": {
+      "add": "Country added successfully",
+      "edit": "Country edited successfully",
+      "remove": "Country removed successfully"
+    }
+  },
+  "city": {
+    "name": "City's name",
+    "cityName": "City",
+    "countryName": "Country",
+    "regionCount": "Regions count",
+    "location": "Location",
+    "latitude": "Latitude",
+    "longitude": "Longitude",
+
+    "add": "Add city",
+    "edit": "Edit city",
+    "remove": "Remove city",
+
+    "message": {
+      "add": "City added successfully",
+      "edit": "City edited successfully",
+      "remove": "City removed successfully"
+    }
+  },
+  "region": {
+    "name": "Region's name",
+    "regionName": "Region",
+    "cityName": "City",
+    "countryName": "Country",
+    "add": "Add region",
+    "edit": "Edit region",
+    "remove": "Remove region",
+
+    "message": {
+      "add": "Region added successfully",
+      "edit": "Region edited successfully",
+      "remove": "Region removed successfully"
+    }
+  },
+  "owner": {
+    "name": "Name",
+    "phoneNumber": "Phone number",
+    "branchesNumber": "Branches count",
+    "gender": "Gender",
+    "nationalNumber": "National Number",
+    "blockState": "Block state",
+    "changeBlock": "Change block state",
+    "creationDate": "Creation Date",
+    "recordType": "Status",
+    "record": "Change {{name}}'s status",
+    "cause": "Reject reason",
+    "changeRecord": "Change Status",
+    "details": {
+      "title": "Owner Details",
+      "gender": "Gender",
+      "fullName": "Full name",
+      "phoneNunber": "Phone number",
+      "recordType": "Status",
+      "nationalNumber": "National Number"
+    },
+    "isBlocked": "Blocked",
+    "isNotBlocked": "Active",
+
+    "block": "Block owner",
+    "unblock": "Unblock owner",
+
+    "message": {
+      "block": "Owner blocked successfully",
+      "unblock": "Owner unblocked successfully",
+      "record": "Owner's status changed successfully"
+    }
+  },
+  "model": {
+    "name": "Name",
+    "module": "Model",
+    "chairCount": "Seats count",
+    "busCount": "Buses count",
+    "columns": "Columns count",
+    "rows": "Rows count",
+    "add": "Add Model",
+    "edit": "Edit Model",
+    "remove": "Remove model",
+    "tooltip": {
+      "chairRemover": "Drag a seat here to remove it"
+    },
+    "message": {
+      "add": "Model added successfully",
+      "edit": "Model edited successfully",
+      "remove": "Model removed successfully"
+    },
+    "validation": {
+      "cannotBeEmpty": "Model cannot be without seats"
+    }
+  },
+  "bus": {
+    "name": "Name",
+    "number": "Number",
+    "chairCount": "Seats count",
+    "location": "Location",
+    "branchName": "Branch",
+    "ownerName": "Owner",
+    "ownerPhoneNumber": "Owner's phone number",
+
+    "filter": {
+      "region": "Region",
+      "city": "City",
+      "owner": "Owner",
+      "branch": "Branch"
+    },
+
+    "details": {
+      "title": "Bus Details",
+      "name": "Name",
+      "number": "Number",
+      "chairCount": "Seats count",
+      "busPhotoUrl": "Bus Image",
+      "platePhotoUrl": "Plate Image",
+      "branchName": "Branch",
+      "ownerName": "Owner"
+    },
+
+    "message": {
+      "remove": "Bus removed successfully"
+    }
+  },
+  "tour": {
+    "name": "Name",
+    "number": "Number",
+    "branchName": "Branch",
+    "ownerName": "Owner",
+    "tourStatus": "Status",
+    "customersCount": "Customers count",
+    "chairPrice": "Ticket price",
+
+    "details": {
+      "title": "Trip Details",
+      "name": "Name",
+      "number": "Number",
+      "chairPrice": "Ticket price",
+      "leaveDate": "Departure date",
+      "arriveDate": "Arrival date",
+      "tourStatus": "Status",
+      "branchName": "Branch",
+      "busName": "Bus",
+      "driverName": "Driver",
+      "driverphoneNumber": "Driver's phone number",
+      "anotherDriverphoneNumber": "Driver's alternative phone number",
+      "coDriverName": "Co-driver",
+      "coDriverPhoneNumber": "Co-driver's phone number",
+      "anotherCoDriverPhoneNumber": "Co-driver's alternative phone number",
+      "tourCities": {
+        "cityName": "City",
+        "time": "Time",
+        "breakTime": "Break",
+        "noBreak": "none"
+      }
+    },
+    "reservationButton": "View reservations",
+    "reservation": {
+      "startCanceling": "Cancel reservations",
+      "stopCanceling": "Stop cancelation",
+      "saveCanceling": "Save cancelation",
+
+      "chairNumber": "Seat",
+      "firstName": "First name",
+      "lastName": "Last name",
+      "gender": "Gender",
+      "phoneNumber": "Phone number",
+      "nationalNumber": "National Number",
+      "code": "Reservation code",
+      "bookingType": "Reservation type",
+      "isPaid": "Paid",
+      "customerName": "Reserver's name",
+      "customerPhoneNumber": "Reserver's phone number",
+      "message": {
+        "add": "Add reservation",
+        "edit": "Edit reservation",
+        "success": {
+          "add": "Reservation added successfully",
+          "edit": "Reservation edited successfully"
+        }
+      },
+      "action": {}
+    }
+  },
+  "customer": {
+    "name": "Customer",
+    "phoneNumber": "Phone number",
+    "recordType": "Status",
+    "pageNumber": "Page Number",
+    "pageSize": "Page Size",
+    "gender": "Gender",
+    "creationDate": "Creation Date",
+    "blockState": "Block state",
+    "changeBlock": "Change block state",
+    "record": "Change {{name}}'s status",
+    "toursCount": "Trips count",
+    "cause": "Reject reason",
+    "changeRecord": "Change Status",
+    "isBlocked": "Blocked",
+    "isNotBlocked": "Active",
+
+    "block": "Block customer",
+    "unblock": "Unblock customer",
+
+    "details": {
+      "title": "Customer Details",
+      "gender": "Gender",
+      "fullName": "Full name",
+      "recordType": "Status",
+      "phoneNunber": "Phone number",
+      "nationalNumber": "National Number"
+    },
+
+    "message": {
+      "record": "Customer's status updated successfully",
+      "block": "Customer blocked successfully",
+      "unblock": "Customer unblocked successfully"
+    }
+  },
+  "file": {
+    "removeUnUsed": "Remove unused files",
+    "message": {
+      "remove": "Unused files removed successfully"
+    }
+  },
+  "accounting": {
+    "customerName": "Customer name",
+    "tourName": "Tour",
+    "branchName": "Branch",
+    "tourArriveDate": "Arrive Date",
+    "tourLeaveDate": "Leave Date",
+    "companyPrice": "Company Price",
+    "ownerPrice": "Owner Price",
+    "isCompanyConfirm": "Company Confirm",
+    "isOwnerConfirm": "Owner Confirm",
+    "payementType": "Payement Type",
+    "receivedConfirm": "Confirm Received",
+    "received": "Received",
+    "confirmText": "Do you want to confirm receive action?",
+    "actionSuccess": "Action confirmed",
+    "selectToRecieve": "Select to recieve",
+    "disabledTourSelectionTooltip": "This tour has been recieved already",
+    "tourSelectionTooltip": "Select this tour to recieve"
+  },
+  "settings": {
+    "about": {
+      "message": {
+        "success": "About app updated successfully"
+      }
+    },
+    "policy": {
+      "message": {
+        "success": "Policies and privacy updated successfully"
+      }
+    },
+    "general": {
+      "companyRatio": "Company fee",
+      "serviceRatio": "Service fee",
+
+      "message": { "edit": "Company fees updated successfully" }
+    },
+    "version": {
+      "title": "Version Details",
+      "add": "Add Version Information",
+      "edit": "Edit Version Information",
+      "currentVersionLabel": "Current Version",
+      "minimumVersionLabel": "Minimum Version",
+      "errorMessageRequired": "Both fields are required.",
+      "successMessageUpdated": "Version information updated successfully!",
+      "errorMessageFailed": "Failed to update version information. Please try again.",
+      "submitButton": "Submit",
+      "message": {
+        "add": "Version information added successfully",
+        "edit": "Versoin information updated successfully"
+      }
+    }
+  },
+  "permissions": {
+    "root": "Permissions",
+    "roleName": "Role Name",
+    "contents": "Contents",
+    "editePermissions": "Edit Permissions",
+    "permissionSearch": "Permission Search",
+    "addPermission": "Add",
+    "editPermission": "Edit",
+    "deletePermission": "Delete",
+    "downloadPermission": "Download",
+    "viewPermission": "View",
+    "message": {
+      "edit": "Permissions edited successfully",
+      "noSearchResult": "No matching permissions"
+    }
+  }
+}
