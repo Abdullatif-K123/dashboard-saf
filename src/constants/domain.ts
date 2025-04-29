@@ -1,7 +1,8 @@
 const DEVELOPMENT_BASE_URL = "https://api.dev.safra-binakra.com";
 const DEVELOPMENT_API_BASE_URL = "https://api.dev.safra-binakra.com/api";
 
-const TEST_BASE_URL = "https://api.test.safra-binakra.com";
+const TEST_BASE_URL = 
+"https://api.test.safra-binakra.com";
 const TEST_API_BASE_URL = "https://api.test.safra-binakra.com/api";
 
 // const PRODUCTION_BASE_URL = `https://api.${
