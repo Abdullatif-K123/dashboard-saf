@@ -57,10 +57,11 @@ const TourCustomersTable: FC<Props> = ({}) => {
 
   const isLoading = infiniteQuery.isLoading;
   const isSuccess = infiniteQuery.isSuccess;
-  const page: TourCustomer[] | undefined = data?.pages?.[0]?.data as
+  const page: TourCustomer[] | undefined = data?.pages?.[0]?.data?.data as
     | TourCustomer[]
     | undefined;
 
+  console.log(data?.pages?.[0]?.data?.data);
   const isEmpty = isSuccess && !page?.length;
   const cancelReservations = tourQueries.useUnBook();
   const queryClient = useQueryClient();

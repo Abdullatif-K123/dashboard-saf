@@ -1,5 +1,5 @@
-import { PaginationParams } from "types/api"
-export type VersionGetAllParams = PaginationParams;
+ 
+export type VersionGetAllParams = [];
 export type version  = {
      id: string,
      currentVersion: string,

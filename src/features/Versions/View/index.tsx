@@ -1,55 +1,84 @@
 import { FC } from "react";
-import { TableBody, TableCell, TableHead, TableRow } from "@mui/material";
-import PaginationTable from "components/tables/PaginationTable";
+import {
+  Box,
+  Paper,
+  Skeleton,
+  Stack,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+} from "@mui/material";
 import TableRowStriped from "components/tables/PaginationTable/TableRowStriped";
 import useEventSearchParams from "hooks/useEventSearchParams";
-import usePageNumberSearchParam from "hooks/usePageNumberSearchParam";
-import useQuerySearchParam from "hooks/useQuerySearchParam";
-import { getPage } from "utils/apiHelpers";
 import useTableHeader from "./useTableHeader";
 import versionQueries from "API/version/queries";
 import ButtonsStack from "components/layout/ButtonsStack";
 import ShowIconButton from "components/buttons/ShowIconButton";
+import RepeatELement from "components/layout/RepeatElement";
+import Loading from "components/feedback/Loading";
+import NoData from "components/feedback/NoData";
 type Props = {};
 const VersionTable: FC<Props> = ({}) => {
-  const query = useQuerySearchParam();
-  const pageNumber = usePageNumberSearchParam();
-  const { edit, remove, details } = useEventSearchParams();
-  const infiniteQuery = versionQueries.useInfiniteQuery({
-    query,
-    pageNumber,
-  });
-  const { data } = infiniteQuery;
+  const { details } = useEventSearchParams();
+  const { data, isLoading, isSuccess } = versionQueries.useVersionGetAll();
+
+  const isEmpty = isSuccess && !data;
+  console.log(data);
   const tableHeader = useTableHeader();
-  const page = getPage(data, pageNumber);
   return (
-    <PaginationTable
-      tableHead={
-        <TableHead>
-          <TableRow>
-            {tableHeader.map((cellHeader) => (
-              <TableCell key={cellHeader}>{cellHeader}</TableCell>
-            ))}
-          </TableRow>
-        </TableHead>
-      }
-      skeleton={true}
-      cellCount={tableHeader.length}
-      pageNumber={pageNumber}
-      infiniteQuery={infiniteQuery}
+    <Paper
+      sx={{
+        borderRadius: 2,
+        mb: "48px !important",
+        overflow: "hidden",
+      }}
     >
-      {page.map((row) => (
-        <TableRowStriped key={row.id}>
-          <TableCell>{row.currentVersion}</TableCell>
-          <TableCell>{row.minimumVersion}</TableCell>
-          <TableCell>
-            <ButtonsStack>
-              <ShowIconButton onClick={() => details(row.id)} />
-           </ButtonsStack>
-          </TableCell>
-        </TableRowStriped>
-      ))}
-    </PaginationTable>
+      <Stack>
+        <TableContainer>
+          <Table>
+            <TableHead>
+              <TableRow>
+                {[...tableHeader].map((cellHeader) => (
+                  <TableCell align="center" key={cellHeader}>
+                    {cellHeader}
+                  </TableCell>
+                ))}
+              </TableRow>
+            </TableHead>
+            {isLoading && (
+              <RepeatELement repeat={3} container={<TableBody />}>
+                <RepeatELement repeat={3} container={<TableRowStriped />}>
+                  <TableCell>
+                    <Skeleton height={3} sx={{ m: "auto" }} />
+                  </TableCell>
+                </RepeatELement>
+              </RepeatELement>
+            )}
+
+            {Array.isArray(data) &&
+              data.map((row) => (
+                <TableRowStriped key={row.id}>
+                  <TableCell align="center">{row.currentVersion}</TableCell>
+                  <TableCell align="center">{row.minimumVersion}</TableCell>
+                  <TableCell align="right">
+                    <ButtonsStack>
+                      <ShowIconButton onClick={() => details(row.id)} />
+                    </ButtonsStack>
+                  </TableCell>
+                </TableRowStriped>
+              ))}
+          </Table>
+        </TableContainer>
+        <Box sx={{ mx: "auto", my: 1, width: "min(90% ,300px)" }}>
+          {isLoading && <Loading />}
+          {!data && !isLoading && <NoData />}
+          {isEmpty && <NoData />}
+        </Box>
+      </Stack>
+    </Paper>
   );
 };
 

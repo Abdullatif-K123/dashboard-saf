@@ -96,7 +96,7 @@ let API_ROUTES = {
   ACCOUNTING: {
     root: controllers.ACCOUNTING,
     GET_ALL: "GetDashBoardFiannce",
-    GET_ALL_CASH: "GetDashBoardCashFiannce",
+    GET_ALL_CASH: "GetDashBoardCashFinance",
     GET: "GetTourFiannce",
     ACTION: "CompanyConfirm",
   },

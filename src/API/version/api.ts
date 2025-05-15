@@ -1,12 +1,9 @@
 import API_ROUTES from "constants/apiRoutes"; 
 import axiosInstance from "API/axios";
-import { version, VersionActionType, VersionGetAllParams } from "./type";
-import { Pagination } from "types/api";
+import { version, VersionActionType, VersionGetAllParams } from "./type"; 
 
-const getAll = async (params: VersionGetAllParams)=>{
-     const {data} = await axiosInstance.get<Pagination<version>>(API_ROUTES.Version.GET_ALL, {
-         params
-     });
+const getAll = async ()=>{
+     const {data} = await axiosInstance.get<version>(API_ROUTES.Version.GET_ALL);
      return data
 }
 const action = async(body: VersionActionType)=>{
@@ -17,9 +14,8 @@ const get = async(id: string)=>{
     
      const {data} = await axiosInstance.get<version>(
          API_ROUTES.Version.GET,{
-             params: {versionId: id},
-         }); 
-         console.log(data)
+             params: {id: id},
+         });  
          return data; 
 }
 

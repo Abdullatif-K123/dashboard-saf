@@ -25,4 +25,4 @@ export const SERVER_BASE_URL = isProduction
 export const API_BASE_URL = isProduction
   ? PRODUCTION_API_BASE_URL
   : TEST_API_BASE_URL;
-export const FILE_BASE_URL = "https://file.dev.safra-binakra.com/wwwroot";
+export const FILE_BASE_URL = "https://clickonline-sy.com";

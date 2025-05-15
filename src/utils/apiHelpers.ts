@@ -32,3 +32,8 @@ export function getPage<T>(data: Data<T>, pageNumber: number) {
     data?.pages[(data?.pageParams[pageNumber] as any) ?? 0]?.data.data ?? []
   );
 }
+export function getPageLatest<T>(data: Data<T>, pageNumber: number) {
+  return (
+    data?.pages[(data?.pageParams[pageNumber] as any) ?? 0]?.data ?? []
+  );
+}
