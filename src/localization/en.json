@@ -484,6 +484,7 @@
     "version": {
       "title": "Version Details",
       "add": "Add Version Information",
+      "remove": "Are you Sure you want to delete this Version of app",
       "edit": "Edit Version Information",
       "currentVersionLabel": "Current Version",
       "minimumVersionLabel": "Minimum Version",
@@ -493,7 +494,8 @@
       "submitButton": "Submit",
       "message": {
         "add": "Version information added successfully",
-        "edit": "Versoin information updated successfully"
+        "edit": "Versoin information updated successfully",
+        "remove": "Version has been deleted successfully"
       }
     }
   },

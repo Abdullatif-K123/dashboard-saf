@@ -20,9 +20,11 @@ import ShowIconButton from "components/buttons/ShowIconButton";
 import RepeatELement from "components/layout/RepeatElement";
 import Loading from "components/feedback/Loading";
 import NoData from "components/feedback/NoData";
+import RemoveIconButton from "components/buttons/RemoveIconButton";
+import EditIconButton from "components/buttons/EditIconButton";
 type Props = {};
 const VersionTable: FC<Props> = ({}) => {
-  const { details } = useEventSearchParams();
+  const { details, remove, edit } = useEventSearchParams();
   const { data, isLoading, isSuccess } = versionQueries.useVersionGetAll();
 
   const isEmpty = isSuccess && !data;
@@ -66,6 +68,12 @@ const VersionTable: FC<Props> = ({}) => {
                   <TableCell align="right">
                     <ButtonsStack>
                       <ShowIconButton onClick={() => details(row.id)} />
+                      <RemoveIconButton onClick={() => remove(row.id)} />
+                      <EditIconButton
+                        onClick={() => {
+                          edit(row.id);
+                        }}
+                      />
                     </ButtonsStack>
                   </TableCell>
                 </TableRowStriped>

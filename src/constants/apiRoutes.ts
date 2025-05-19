@@ -103,7 +103,8 @@ let API_ROUTES = {
   Version: {
      root: controllers.VERSION, 
      GET_ALL: "GetAll", 
-     GET: "GetDetails", 
+     GET: "GetDetails",
+     DELETE: "Delete",
      ACTION_VERSION: "Action"
   },
   SETTINGS: {

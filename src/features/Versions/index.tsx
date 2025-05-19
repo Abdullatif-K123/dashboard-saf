@@ -8,10 +8,12 @@ import SearchInput from "components/Inputs/SearchInput";
 import { Stack, Grid } from "@mui/material";
 import VersionTable from "./View";
 import VersionDetails from "./Details";
+import VersionRemove from "./Remove/index";
 export type VersionProps = {};
 export const Version: FC<VersionProps> = () => {
   const permissionName = PermissionName.Setting;
-  const { hasAddPermission } = useRoleContext();
+  const { hasAddPermission, hasDeletePermission, hasEditPermission } =
+    useRoleContext();
   return (
     <Stack gap={2}>
       <FilterRow>
@@ -23,6 +25,7 @@ export const Version: FC<VersionProps> = () => {
       <VersionAction />
       <VersionDetails />
       {hasAddPermission(permissionName) && <AddFab />}
+      {hasDeletePermission(permissionName) && <VersionRemove />}
     </Stack>
   );
 };

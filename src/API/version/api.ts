@@ -19,8 +19,12 @@ const get = async(id: string)=>{
          return data; 
 }
 
+const remove = async (id: string)=>{
+    await axiosInstance.delete(API_ROUTES.Version.DELETE, {params: {id}})
+}
 
 const versionAPI  = {
+    remove, 
     getAll,
     get,
      action

@@ -19,6 +19,7 @@ import { useTranslation } from "react-i18next";
 import { versionActionDefault, versionActionSchema } from "./validation";
 import { useQueryClient } from "@tanstack/react-query";
 import controllers from "constants/controllers";
+import versionQueries from "API/version/queries";
 
 type Props = {};
 
@@ -26,6 +27,7 @@ const VersionAction: FC<Props> = () => {
   const tName = "version";
   const { t } = useTranslation(undefined, { keyPrefix: "settings" });
   const { clearActionParams, id, isActive, isEdit } = useActionSearchParams();
+  const { data, isLoading } = versionQueries.useDetailsQuery(id ?? "");
   //   const { data, isLoading } = versionQueries.useQuery(id);
   const {
     control,
@@ -49,6 +51,7 @@ const VersionAction: FC<Props> = () => {
     try {
       await versionAPI.action(data);
       queryClient.invalidateQueries([controllers.VERSION, "all"]);
+      queryClient.invalidateQueries([controllers.VERSION, id]);
       handleClose();
       successSnackbar(t(`${tName}.message.${isEdit ? "edit" : "add"}`));
     } catch (err: unknown) {
@@ -56,6 +59,9 @@ const VersionAction: FC<Props> = () => {
     }
   };
 
+  useEffect(() => {
+    if (data) reset(data);
+  }, [data, reset]);
   return (
     <Dialog open={isActive} onClose={handleClose} fullWidth maxWidth={"xs"}>
       <Fade in={isActive} timeout={0}>
