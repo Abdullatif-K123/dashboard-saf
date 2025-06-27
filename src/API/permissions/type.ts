@@ -7,7 +7,11 @@ export interface Role {
   roleName: string;
   contents: string[];
 }
-
+export interface NewRole {
+   roleId: string; 
+   roleName: string; 
+   data: Permission[];
+}
 export type Permission = {
   id: string;
   name: string;
@@ -17,6 +21,7 @@ export type Permission = {
   canView: boolean;
   canDownload: boolean;
 };
+
 
 export enum PermissionAction {
   canAdd = "canAdd",
@@ -44,10 +49,11 @@ export enum PermissionName {
   TourBooking = "TourBooking",
 }
 
+ 
 export type RoleDetails = Omit<Role, "contents"> & {
   contents: Permission[];
 };
 
-export type RolePermissions = Permission[];
+export type RolePermissions = NewRole;
 
 export type RoleBody = RoleDetails;

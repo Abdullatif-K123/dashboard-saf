@@ -54,7 +54,6 @@ const Login = () => {
           data.fcmToken = (await getFirebaseToken()) ?? "";
         }
       }
-      console.log(data);
       const token = await accountAPI.login(data);
       storage.setToken(token);
       await queryClient.invalidateQueries([

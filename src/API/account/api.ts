@@ -26,20 +26,22 @@ const action = async (body: AccountActionBody) => {
 };
 
 const login = async (body: AccountLoginBody) => {
-  const { requestToken } = await getCsrfToken("/api/" + API_ROUTES.ACCOUNT.LOGIN);
+  // const { requestToken } = await getCsrfToken("/api/" + API_ROUTES.ACCOUNT.LOGIN);
   const { data } = await axiosInstance.post<string>(
     API_ROUTES.ACCOUNT.LOGIN,
-    { ...body, token: requestToken },
-    {
-      headers: {
-        "XSRF-TOKEN": requestToken,
-      },
-    }
+    { ...body },
+    // {
+    //   headers: {
+    //     "XSRF-TOKEN": requestToken,
+    //   },
+    // }
+    // token: requestToken
   );
   return data;
 };
 
 const getCsrfToken = async (requestPath: string) => {
+  console.log(requestPath)
   const { data } = await axiosInstance.get<{ requestToken: string }>(
     API_ROUTES.ACCOUNT.GET_CSRF_TOKEN,
     {

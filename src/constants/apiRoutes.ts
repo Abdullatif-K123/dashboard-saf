@@ -2,11 +2,11 @@ import controllers from "./controllers";
 
 let API_ROUTES = {
   ACCOUNT: {
-    root: controllers.ACCOUNT,
+    root: controllers.CpUser,
     GET_ALL: "GetCpUsers",
     GET: "GetCpUserDetails",
     ACTION: "ActionCpUserAccount",
-    LOGIN: "CPUserLogin",
+    LOGIN: "SignIn",
     REMOVE: "RemoveCpAccount",
     GET_CSRF_TOKEN: "GetCsrfToken",
   },
@@ -121,7 +121,7 @@ let API_ROUTES = {
     GET_ALL: "GetAll",
     GET: "GetDetails",
     ACTION: "Action",
-    GET_PERMISSIONS: "GetRolePermissions",
+    GET_PERMISSIONS: "GetAllContents",
   },
 } as const;
 

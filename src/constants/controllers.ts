@@ -1,5 +1,5 @@
 const controllers = {
-  ACCOUNT: "AccountCp",
+  CpUser: "CpUser",
   BRANCH: "BranchCp",
   COUNTRY: "CountryCp",
   CITY: "CityCp",

@@ -25,8 +25,7 @@ const get = async (id: string) => {
     {
       params: { roleId: id },
     }
-  );
-  console.log(data)
+  ); 
   return data;
 };
 

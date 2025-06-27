@@ -54,8 +54,8 @@ const AccountAction: FC<Props> = ({}) => {
   const onSubmit = async (data: AccountActionBody) => {
     try {
       await accountAPI.action(data);
-      queryClient.invalidateQueries([controllers.ACCOUNT, "all"]);
-      queryClient.invalidateQueries([controllers.ACCOUNT, id]);
+      queryClient.invalidateQueries([controllers.CpUser, "all"]);
+      queryClient.invalidateQueries([controllers.CpUser, id]);
       handleClose();
       successSnackbar(t(`${tName}.message.${isEdit ? "edit" : "add"}`));
     } catch (err: unknown) {
