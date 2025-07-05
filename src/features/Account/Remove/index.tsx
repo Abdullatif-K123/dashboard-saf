@@ -24,7 +24,7 @@ const AccountRemove: FC<Props> = ({}) => {
     try {
       setIsLoading(true);
       await accountAPI.remove(id ?? "");
-      queryClient.invalidateQueries([controllers.ACCOUNT, "all"]);
+      queryClient.invalidateQueries([controllers.CpUser, "all"]);
       handleClose();
       successSnackbar(t(`${tName}.message.remove`));
     } catch (err: unknown) {

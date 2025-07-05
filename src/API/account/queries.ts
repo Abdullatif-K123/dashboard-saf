@@ -7,7 +7,7 @@ import { AccountGetAllParams } from "./type";
 const accountQueries = {
   useInfiniteQuery: (params: AccountGetAllParams) => {
     const queryResult = useInfiniteQuery(
-      [controllers.ACCOUNT, "all", params.query, params.pageNumber],
+      [controllers.CpUser, "all", params.query, params.pageNumber],
       async ({ pageParam = 0 }) => {
         const data = await accountAPI.getAll({
           pageNumber: params.pageNumber,
@@ -27,9 +27,13 @@ const accountQueries = {
     return queryResult;
   },
   useQuery: (id: string | null) => {
-    const queryResult = useQuery([controllers.ACCOUNT, id], () => accountAPI.get(id ?? ""), {
-      enabled: !!id,
-    });
+    const queryResult = useQuery(
+      [controllers.CpUser, id],
+      () => accountAPI.get(id ?? ""),
+      {
+        enabled: !!id,
+      }
+    );
     return queryResult;
   },
 };

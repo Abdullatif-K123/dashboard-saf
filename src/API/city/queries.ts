@@ -6,7 +6,13 @@ import { CityGetAllParams } from "./type";
 const cityQueries = {
   useInfiniteQuery: (params: CityGetAllParams) => {
     const queryResult = useInfiniteQuery(
-      [controllers.CITY, "all", params.pageNumber, params.query, params.countryId],
+      [
+        controllers.CITY,
+        "all",
+        params.pageNumber,
+        params.query,
+        params.countryId,
+      ],
       async ({ pageParam = 0 }) => {
         const data = await cityAPI.getAll(params);
         return {
@@ -23,9 +29,13 @@ const cityQueries = {
     return queryResult;
   },
   useQuery: (id: string | null) => {
-    const queryResult = useQuery([controllers.CITY, id], () => cityAPI.get(id ?? ""), {
-      enabled: !!id,
-    });
+    const queryResult = useQuery(
+      [controllers.CITY, id],
+      () => cityAPI.get(id ?? ""),
+      {
+        enabled: !!id,
+      }
+    );
     return queryResult;
   },
   useSelectQuery: (countryId: string | null) => {
@@ -33,7 +43,7 @@ const cityQueries = {
       [controllers.CITY, "select", countryId],
       () => cityAPI.getAllNp(countryId),
       {
-        select: (cities) => cities.map(({ id, cityName }) => ({ id, cityName })),
+        select: (cities) => cities.map(({ id, name }) => ({ id, name })),
       }
     );
     return queryResult;

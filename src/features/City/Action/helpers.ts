@@ -13,7 +13,7 @@ export function cityFormToBody(data: CityActionForm): CityActionBody {
 export function cityDetailsToForm(data: CityDetails): CityActionForm {
   return {
     id: data.id,
-    name: data.cityName,
+    name: data.name,
     country: {
       id: data.countryId,
       name: data.countryName,

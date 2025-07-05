@@ -55,7 +55,7 @@ const Login = () => {
         }
       }
       const token = await accountAPI.login(data);
-      storage.setToken(token);
+      storage.setToken({ token });
       await queryClient.invalidateQueries([
         controllers.PERMISSION,
         "permissions",

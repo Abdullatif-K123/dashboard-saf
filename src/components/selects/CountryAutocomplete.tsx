@@ -18,10 +18,10 @@ const CountryAutocomplete: FC<Props> = ({ ...props }) => {
       {...props}
       loading={isLoading}
       options={data ?? []}
-      getOptionLabel={(option) => option.name}
+      getOptionLabel={(option) => option.cityName}
       renderOption={(props, option) => (
         <li {...props} key={option.id}>
-          {option.name}
+          {option.cityName}
         </li>
       )}
       loadingText={<Loading />}

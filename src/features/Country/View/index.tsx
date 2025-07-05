@@ -51,7 +51,7 @@ const CountryTable: FC<Props> = ({}) => {
       <TableBody>
         {page.map((row) => (
           <TableRowStriped key={row.id}>
-            <TableCell>{row.name}</TableCell>
+            <TableCell>{row.cityName}</TableCell>
             <TableCell>{row.cityCount}</TableCell>
             <TableCell width={"30%"}>
               {!actionPermission && "-"}
