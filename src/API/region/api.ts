@@ -9,21 +9,31 @@ import {
   RegionGetAllParams,
 } from "./type";
 const getAll = async (params: RegionGetAllParams) => {
-  const { data } = await axiosInstance.get<Pagination<Region>>(API_ROUTES.REGION.GET_ALL, {
-    params,
-  });
+  console.log(params);
+  const { data } = await axiosInstance.get<Pagination<Region>>(
+    API_ROUTES.REGION.GET_ALL,
+    {
+      params,
+    }
+  );
   return data;
 };
 const getAllNp = async (params: RegionGetAllNpParams) => {
-  const { data } = await axiosInstance.get<Region[]>(API_ROUTES.REGION.GET_SELECT, {
-    params,
-  });
+  const { data } = await axiosInstance.get<Region[]>(
+    API_ROUTES.REGION.GET_SELECT,
+    {
+      params,
+    }
+  );
   return data;
 };
 const get = async (regionId: string) => {
-  const { data } = await axiosInstance.get<RegionDetails>(API_ROUTES.REGION.GET, {
-    params: { regionId },
-  });
+  const { data } = await axiosInstance.get<RegionDetails>(
+    API_ROUTES.REGION.GET,
+    {
+      params: { regionId },
+    }
+  );
   return data;
 };
 const action = async (body: RegionActionBody) => {

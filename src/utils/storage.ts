@@ -1,7 +1,10 @@
+type tokenize = {
+  token: string;
+};
 export const tokenChangedEvent = new Event("tokenChanged");
 export const storage = {
-  setToken(token: string) {
-    localStorage.setItem("token", token);
+  setToken(token: tokenize) {
+    localStorage.setItem("token", token.token);
     window.dispatchEvent(tokenChangedEvent);
   },
   clearToken() {

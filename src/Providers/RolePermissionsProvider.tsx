@@ -16,16 +16,14 @@ const RolePermissionsProvider = ({ children }: Props) => {
     permission: PermissionName,
     action: PermissionAction = PermissionAction.canView
   ) => {
-    const perm = permissions?.data?.find((perm) => {
-      return perm.name === permission;
-    });
-    console.log(permissions);
+    const perm = permissions?.find((perm) => perm.name === permission);
+
     if (perm) {
-      console.log(perm);
       return perm[action];
     }
     return false;
   };
+
   const hasEditPermission = (permission: PermissionName) =>
     hasPermission(permission, PermissionAction.canEdit);
   const hasAddPermission = (permission: PermissionName) =>

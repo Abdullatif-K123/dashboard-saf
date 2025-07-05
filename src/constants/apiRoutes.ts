@@ -3,9 +3,11 @@ import controllers from "./controllers";
 let API_ROUTES = {
   ACCOUNT: {
     root: controllers.CpUser,
-    GET_ALL: "GetCpUsers",
+    GET_ALL: "GetAll",
+    //  "GetCpUsers",
     GET: "GetCpUserDetails",
-    ACTION: "ActionCpUserAccount",
+    ACTION: "Action",
+    // "ActionCpUserAccount",
     LOGIN: "SignIn",
     REMOVE: "RemoveCpAccount",
     GET_CSRF_TOKEN: "GetCsrfToken",
@@ -101,11 +103,11 @@ let API_ROUTES = {
     ACTION: "CompanyConfirm",
   },
   Version: {
-     root: controllers.VERSION, 
-     GET_ALL: "GetAll", 
-     GET: "GetDetails",
-     DELETE: "Delete",
-     ACTION_VERSION: "Action"
+    root: controllers.VERSION,
+    GET_ALL: "GetAll",
+    GET: "GetDetails",
+    DELETE: "Delete",
+    ACTION_VERSION: "Action",
   },
   SETTINGS: {
     root: controllers.SETTINGS,
@@ -119,9 +121,10 @@ let API_ROUTES = {
   PERMISSION: {
     root: controllers.PERMISSION,
     GET_ALL: "GetAll",
+    GET_ROLE: "GetRolePermissions",
     GET: "GetDetails",
     ACTION: "Action",
-    GET_PERMISSIONS: "GetAllContents",
+    GET_PERMISSIONS: "GetRolePermissions",
   },
 } as const;
 

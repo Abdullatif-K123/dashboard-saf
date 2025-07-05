@@ -16,19 +16,28 @@ import {
 } from "./type";
 
 const getAll = async (params: TourGetAllParams, body: TourGetAllBody) => {
-  const { data } = await axiosInstance.put<Pagination<Tour>>(API_ROUTES.TOUR.GET_ALL, body, {
-    params,
-  });
+  const { data } = await axiosInstance.put<Pagination<Tour>>(
+    API_ROUTES.TOUR.GET_ALL,
+    {},
+    {
+      params,
+    }
+  );
   return data;
 };
 const get = async (id: string) => {
-  const { data } = await axiosInstance.get<TourDetails>(API_ROUTES.TOUR.GET, { params: { id } });
+  const { data } = await axiosInstance.get<TourDetails>(API_ROUTES.TOUR.GET, {
+    params: { id },
+  });
   return data;
 };
 const getForCustomer = async (params: TourDetailsForCustomerParams) => {
-  const { data } = await axiosInstance.get<TourDetailsForCustomer>(API_ROUTES.CUSTOMER_TOUR.GET, {
-    params,
-  });
+  const { data } = await axiosInstance.get<TourDetailsForCustomer>(
+    API_ROUTES.CUSTOMER_TOUR.GET,
+    {
+      params,
+    }
+  );
   data.model.module = parseModelArray(data.model.module as unknown as string);
   return data;
 };
@@ -40,13 +49,19 @@ const getCustomers = async (params: TourGetCustomersParams) => {
   return data;
 };
 const unbook = async ({ body }: { body: TourBookBody }) => {
-  const { data } = await axiosInstance.delete<true>(API_ROUTES.CUSTOMER_TOUR.REMOVE_CUSTOMER, {
-    data: body,
-  });
+  const { data } = await axiosInstance.delete<true>(
+    API_ROUTES.CUSTOMER_TOUR.REMOVE_CUSTOMER,
+    {
+      data: body,
+    }
+  );
   return data;
 };
 const customerAction = async (body: TourCustomerAction) => {
-  const { data } = await axiosInstance.post<string>(API_ROUTES.CUSTOMER_TOUR.ACTION_CUSTOMER, body);
+  const { data } = await axiosInstance.post<string>(
+    API_ROUTES.CUSTOMER_TOUR.ACTION_CUSTOMER,
+    body
+  );
   return data;
 };
 const getBusBookedChairs = async (tourId: string) => {

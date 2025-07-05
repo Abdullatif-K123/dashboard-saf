@@ -38,5 +38,11 @@ const permissionsQueries = {
       { staleTime: Infinity }
     ),
   useAction: () => useMutation(permissionsAPI.action),
+  useGetRolePermissions: (roleId: string) =>
+    useQuery(
+      [controllers.PERMISSION, "role-permissions", roleId],
+      () => permissionsAPI.getRolePermissions(roleId),
+      { staleTime: Infinity }
+    ),
 };
 export default permissionsQueries;

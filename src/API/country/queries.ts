@@ -23,15 +23,24 @@ const countryQueries = {
     return queryResult;
   },
   useQuery: (id: string | null) => {
-    const queryResult = useQuery([controllers.COUNTRY, id], () => countryAPI.get(id ?? ""), {
-      enabled: !!id,
-    });
+    const queryResult = useQuery(
+      [controllers.COUNTRY, id],
+      () => countryAPI.get(id ?? ""),
+      {
+        enabled: !!id,
+      }
+    );
     return queryResult;
   },
   useSelectQuery: () => {
-    const queryResult = useQuery([controllers.COUNTRY, "select"], () => countryAPI.getAllNp(), {
-      select: (countries) => countries.map(({ id, name }) => ({ id, name })),
-    });
+    const queryResult = useQuery(
+      [controllers.COUNTRY, "select"],
+      () => countryAPI.getAllNp(),
+      {
+        select: (res) => res.countries.map(({ id, name }) => ({ id, name })),
+      }
+    );
+    console.log("QueryResult", queryResult);
     return queryResult;
   },
 };

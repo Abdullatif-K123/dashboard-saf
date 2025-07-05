@@ -4,9 +4,13 @@ import axiosInstance from "../axios";
 import { Bus, BusDetails, BusGetAllBody, BusGetAllParams } from "./type";
 
 const getAll = async (params: BusGetAllParams, body: BusGetAllBody) => {
-  const { data } = await axiosInstance.put<Pagination<Bus>>(API_ROUTES.BUS.GET_ALL, body, {
-    params,
-  });
+  const { data } = await axiosInstance.put<Pagination<Bus>>(
+    API_ROUTES.BUS.GET_ALL,
+    {},
+    {
+      params,
+    }
+  );
   return data;
 };
 const get = async (id: string) => {

@@ -8,7 +8,10 @@ export type Country = {
   cityCount: number;
 };
 
-export type CountrySelect = Pick<Country, "id" | "name">;
+export type CountryUpdate = {
+  countries: Country[];
+};
+export type CountrySelect = Pick<CountryUpdate, "id" | "name">;
 export type CountryDetails = {
   id: string;
   name: string;

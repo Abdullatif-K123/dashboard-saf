@@ -25,7 +25,7 @@ const get = async (id: string) => {
     {
       params: { roleId: id },
     }
-  ); 
+  );
   return data;
 };
 
@@ -41,11 +41,22 @@ const action = async (body: RoleBody) => {
   return data;
 };
 
+const getRolePermissions = async (roleId: string) => {
+  const { data } = await axiosInstance.get<RolePermissions>(
+    API_ROUTES.PERMISSION.GET_ROLE,
+    {
+      params: { roleId },
+    }
+  );
+  return data;
+};
+
 const permissionsAPI = {
   getAll,
   get,
   action,
   getPermissions,
+  getRolePermissions,
 };
 
 export default permissionsAPI;

@@ -11,6 +11,7 @@ import { useTranslation } from "react-i18next";
 
 const PermissionAction = () => {
   const { isActive, id, clearActionParams } = useActionSearchParams();
+
   const { t } = useTranslation();
   const { data, isLoading, isSuccess, isError, error } =
     permissionsQueries.useDetailsQuery(id ? id : "");

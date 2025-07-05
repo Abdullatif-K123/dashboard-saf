@@ -6,17 +6,17 @@ export type CityGetAllParams = PaginationParams & {
 
 export type City = {
   id: string;
-  cityName: string;
+  name: string;
   countryName: string;
   regionCount: number;
   latitude: number;
   longitude: number;
 };
-export type CitySelect = Pick<City, "id" | "cityName">;
+export type CitySelect = Pick<City, "id" | "name">;
 export type CityDetails = {
   id: string;
   countryId: string;
-  cityName: string;
+  name: string;
   countryName: string;
   latitude: number;
   longitude: number;
