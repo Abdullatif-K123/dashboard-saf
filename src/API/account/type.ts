@@ -2,7 +2,13 @@ import { UserKind } from "constants/enums";
 import { PaginationParams } from "../../types/api";
 
 export type AccountGetAllParams = PaginationParams;
-
+export type loginToken = {
+  userName: string;
+  firstName: string;
+  lastName: string;
+  token: string;
+  refreshToken: string;
+};
 export type Account = {
   rolesName: string[];
   userName: string;

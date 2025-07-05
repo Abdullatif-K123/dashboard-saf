@@ -7,18 +7,25 @@ import {
   AccountDetails,
   AccountGetAllParams,
   AccountLoginBody,
+  loginToken,
 } from "./type";
 
 const getAll = async (params: AccountGetAllParams) => {
-  const { data } = await axiosInstance.get<Pagination<Account>>(API_ROUTES.ACCOUNT.GET_ALL, {
-    params,
-  });
+  const { data } = await axiosInstance.get<Pagination<Account>>(
+    API_ROUTES.ACCOUNT.GET_ALL,
+    {
+      params,
+    }
+  );
   return data;
 };
 const get = async (id: string) => {
-  const { data } = await axiosInstance.get<AccountDetails>(API_ROUTES.ACCOUNT.GET, {
-    params: { id },
-  });
+  const { data } = await axiosInstance.get<AccountDetails>(
+    API_ROUTES.ACCOUNT.GET,
+    {
+      params: { id },
+    }
+  );
   return data;
 };
 const action = async (body: AccountActionBody) => {
@@ -27,9 +34,9 @@ const action = async (body: AccountActionBody) => {
 
 const login = async (body: AccountLoginBody) => {
   // const { requestToken } = await getCsrfToken("/api/" + API_ROUTES.ACCOUNT.LOGIN);
-  const { data } = await axiosInstance.post<string>(
+  const { data } = await axiosInstance.post<loginToken>(
     API_ROUTES.ACCOUNT.LOGIN,
-    { ...body },
+    { ...body }
     // {
     //   headers: {
     //     "XSRF-TOKEN": requestToken,
@@ -41,7 +48,7 @@ const login = async (body: AccountLoginBody) => {
 };
 
 const getCsrfToken = async (requestPath: string) => {
-  console.log(requestPath)
+  console.log(requestPath);
   const { data } = await axiosInstance.get<{ requestToken: string }>(
     API_ROUTES.ACCOUNT.GET_CSRF_TOKEN,
     {
