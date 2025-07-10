@@ -16,6 +16,7 @@ const Account: FC<Props> = ({}) => {
     useRoleContext();
   const actionPermission =
     hasEditPermission(permissionName) || hasAddPermission(permissionName);
+
   return (
     <Stack gap={2}>
       <FilterRow>

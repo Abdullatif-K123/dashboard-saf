@@ -2,7 +2,7 @@ export const tokenChangedEvent = new Event("tokenChanged");
 export const storage = {
   setToken(token: string) {
     console.log("token", token);
-    localStorage.setItem("token", token);
+    localStorage.setItem("token", token );
     window.dispatchEvent(tokenChangedEvent);
   },
   clearToken() {

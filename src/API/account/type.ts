@@ -9,9 +9,14 @@ export type loginToken = {
   token: string;
   refreshToken: string;
 };
+export type rolesUser = {
+  roleId: string;
+  roleName: string;
+};
 export type Account = {
-  rolesName: string[];
-  userName: string;
+  userRoles: rolesUser[];
+  username: string;
+  firstName: string;
   name: string;
   phoneNumber: string;
   id: string;

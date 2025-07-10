@@ -53,13 +53,14 @@ const AccountTable: FC<Props> = ({}) => {
       <TableBody>
         {page.map((row) => (
           <TableRowStriped key={row.id}>
-            <TableCell>{row.name}</TableCell>
-            <TableCell>{row.userName}</TableCell>
-            <TableCell>{row.phoneNumber}</TableCell>
+            <TableCell>{row?.firstName}</TableCell>
+            {/* <TableCell>{row?.lastName}</TableCell> */}
+            <TableCell>{row?.username}</TableCell>
+            <TableCell>{row?.phoneNumber}</TableCell>
             <TableCell sx={{ width: 0 }}>
               <Stack direction="row" gap={0.5} justifyContent={"center"}>
-                {row.rolesName.map((name) => (
-                  <Chip key={name} label={t(`enum.Userkind.${name}`)} />
+                {row?.userRoles?.map((name) => (
+                  <Chip key={name.roleId} label={name?.roleName} />
                 ))}
               </Stack>
             </TableCell>

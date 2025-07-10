@@ -25,6 +25,7 @@ import { useTranslation } from "react-i18next";
 import accountActionSchema, { accountActionDefault } from "./validation";
 import { useRoleContext } from "context/RolePermissionsContext";
 import { PermissionName } from "API/permissions/type";
+import permissionsQueries from "API/permissions/queries";
 type Props = {};
 const AccountAction: FC<Props> = ({}) => {
   const tName = "account";
@@ -51,7 +52,10 @@ const AccountAction: FC<Props> = ({}) => {
     clearActionParams();
     reset(accountActionDefault);
   };
+
+  // Firing...
   const onSubmit = async (data: AccountActionBody) => {
+    console.log(data);
     try {
       await accountAPI.action(data);
       queryClient.invalidateQueries([controllers.CpUser, "all"]);
@@ -66,7 +70,7 @@ const AccountAction: FC<Props> = ({}) => {
   useEffect(() => {
     if (data) {
       reset(data);
-      setValue("roles", data.rolesName);
+      setValue("roles", data?.rolesName);
       setValue("password", "");
     }
   }, [data, reset, setValue]);
@@ -77,6 +81,8 @@ const AccountAction: FC<Props> = ({}) => {
   if (!isEdit && !hasAddPermission(PermissionName.Account)) {
     return null;
   }
+
+  const { data: permissionData } = permissionsQueries.useGetRolePermissions();
 
   return (
     <Dialog open={isActive} onClose={handleClose} fullWidth maxWidth={"md"}>
@@ -137,9 +143,10 @@ const AccountAction: FC<Props> = ({}) => {
               </Grid>
               <Grid item xs={12} md={6}>
                 <RolesAutocompleteControlled
-                  name="roles"
+                  name="userRoles"
                   control={control}
                   required
+                  data={permissionData?.data}
                 />
               </Grid>
               <Grid item xs={12} justifyContent="center" display="flex" mt={3}>

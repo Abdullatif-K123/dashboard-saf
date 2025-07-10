@@ -7,6 +7,7 @@ import {
   RoleDetails,
   RolePermissions,
   RolesGetAllParams,
+  userRole,
 } from "API/permissions/type";
 
 const getAll = async (params: RolesGetAllParams) => {
@@ -23,7 +24,7 @@ const get = async (id: string) => {
   const { data } = await axiosInstance.get<RoleDetails>(
     API_ROUTES.PERMISSION.GET,
     {
-      params: { roleId: id },
+      params: { id },
     }
   );
   return data;
@@ -41,12 +42,9 @@ const action = async (body: RoleBody) => {
   return data;
 };
 
-const getRolePermissions = async (roleId: string) => {
-  const { data } = await axiosInstance.get<RolePermissions>(
-    API_ROUTES.PERMISSION.GET_ROLE,
-    {
-      params: { roleId },
-    }
+const getRolePermissions = async () => {
+  const { data } = await axiosInstance.get<userRole[]>(
+    API_ROUTES.PERMISSION.GET_ROLE
   );
   return data;
 };

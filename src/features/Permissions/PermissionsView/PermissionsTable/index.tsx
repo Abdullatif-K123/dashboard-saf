@@ -44,12 +44,12 @@ const PermissionsTable = ({ sx }: { sx?: SxProps }) => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {filteredPermissions.length === 0 && (
+            {filteredPermissions?.length === 0 && (
               <TableCell rowSpan={6}>
                 {t("permissions.message.noSearchResult")}
               </TableCell>
             )}
-            {filteredPermissions.length > 0 &&
+            {filteredPermissions?.length > 0 &&
               filteredPermissions.map((perm) => (
                 <Row key={perm.id} data={perm} />
               ))}

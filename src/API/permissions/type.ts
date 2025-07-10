@@ -5,7 +5,7 @@ export type RolesGetAllParams = PaginationParams;
 export interface Role {
   roleId: string;
   roleName: string;
-  contents: string[];
+  permissions: userRole[];
 }
 export interface NewRole {
   roleId: string;
@@ -20,6 +20,11 @@ export type Permission = {
   canDelete: boolean;
   canView: boolean;
   canDownload: boolean;
+};
+
+export type userRole = {
+  id: string;
+  name: string;
 };
 
 export enum PermissionAction {
@@ -48,8 +53,8 @@ export enum PermissionName {
   TourBooking = "TourBooking",
 }
 
-export type RoleDetails = Omit<Role, "contents"> & {
-  contents: Permission[];
+export type RoleDetails = Omit<Role, "permissions"> & {
+  permissions: userRole[];
 };
 
 export type RolePermissions = Permission[];

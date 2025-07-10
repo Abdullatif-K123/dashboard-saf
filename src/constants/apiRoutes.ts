@@ -5,7 +5,7 @@ let API_ROUTES = {
     root: controllers.CpUser,
     GET_ALL: "GetAll",
     //  "GetCpUsers",
-    GET: "GetCpUserDetails",
+    GET: "GetDetails",
     ACTION: "Action",
     // "ActionCpUserAccount",
     LOGIN: "SignIn",
@@ -121,7 +121,7 @@ let API_ROUTES = {
   PERMISSION: {
     root: controllers.PERMISSION,
     GET_ALL: "GetAll",
-    GET_ROLE: "GetRolePermissions",
+    GET_ROLE: "GetAllContents",
     GET: "GetDetails",
     ACTION: "Action",
     GET_PERMISSIONS: "GetRolePermissions",

@@ -25,7 +25,7 @@ type Actions =
     };
 
 const reducer = (state: RoleDetails, action: Actions) => {
-  const newContents = [...state.contents];
+  const newContents = [...state.permissions];
   switch (action.type) {
     case "TOGGLE_ADD":
       {
@@ -133,7 +133,7 @@ const reducer = (state: RoleDetails, action: Actions) => {
       });
     }
   }
-  return { ...state, contents: newContents };
+  return { ...state, permissions: newContents };
 };
 
 type PermissionsProviderProps = { data: RoleDetails; children: ReactNode };
@@ -146,9 +146,9 @@ const PermissionsProvider = ({ data, children }: PermissionsProviderProps) => {
     setQuery: setQ,
     getFilterPermissions: () => {
       if (q.trim().length === 0) {
-        return role.contents;
+        return role.permissions;
       }
-      return role.contents.filter((el) => {
+      return role.permissions.filter((el) => {
         const str1 = el.name.toLowerCase();
         const str2 = q.toLowerCase();
         return str1.includes(str2) || str2.includes(str1);

@@ -24,7 +24,7 @@ const RolesTable = () => {
   const { data } = infiniteQuery;
   const tableHeaders = useTableHeader();
   const page = getPage(data, pageNumber);
-
+  console.log(page);
   return (
     <PaginationTable
       tableHead={
@@ -54,7 +54,9 @@ const RolesTable = () => {
                 overflow: "hidden",
               }}
             >
-              {row.contents.length === 0 ? "-" : row.contents.join(", ")}
+              {row?.permissions?.length === 0
+                ? "-"
+                : row?.permissions.map((p) => p.name)?.join(", ")}
             </TableCell>
             <TableCell>
               <ButtonsStack>
