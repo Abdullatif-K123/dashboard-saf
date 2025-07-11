@@ -29,11 +29,11 @@ const reducer = (state: RoleDetails, action: Actions) => {
   switch (action.type) {
     case "TOGGLE_ADD":
       {
-        const permIdx = state.contents.findIndex(
+        const permIdx = state.permissions.findIndex(
           (perm) => perm.id === action.permissionID
         );
         if (permIdx !== -1) {
-          const perm = state.contents[permIdx];
+          const perm = state.permissions[permIdx];
           const canView = !perm.canAdd ? true : perm.canView;
           newContents[permIdx] = { ...perm, canAdd: !perm.canAdd, canView };
         }
@@ -41,11 +41,11 @@ const reducer = (state: RoleDetails, action: Actions) => {
       break;
     case "TOGGLE_EDIT":
       {
-        const permIdx = state.contents.findIndex(
+        const permIdx = state.permissions.findIndex(
           (perm) => perm.id === action.permissionID
         );
         if (permIdx !== -1) {
-          const perm = state.contents[permIdx];
+          const perm = state.permissions[permIdx];
           const canView = !perm.canAdd ? true : perm.canView;
           newContents[permIdx] = { ...perm, canEdit: !perm.canEdit, canView };
         }
@@ -53,11 +53,11 @@ const reducer = (state: RoleDetails, action: Actions) => {
       break;
     case "TOGGLE_DELETE":
       {
-        const permIdx = state.contents.findIndex(
+        const permIdx = state.permissions.findIndex(
           (perm) => perm.id === action.permissionID
         );
         if (permIdx !== -1) {
-          const perm = state.contents[permIdx];
+          const perm = state.permissions[permIdx];
           const canView = !perm.canAdd ? true : perm.canView;
           newContents[permIdx] = {
             ...perm,
@@ -69,11 +69,11 @@ const reducer = (state: RoleDetails, action: Actions) => {
       break;
     case "TOGGLE_VIEW":
       {
-        const permIdx = state.contents.findIndex(
+        const permIdx = state.permissions.findIndex(
           (perm) => perm.id === action.permissionID
         );
         if (permIdx !== -1) {
-          const perm = state.contents[permIdx];
+          const perm = state.permissions[permIdx];
           newContents[permIdx] = {
             ...perm,
             canView: !perm.canView,
@@ -87,11 +87,11 @@ const reducer = (state: RoleDetails, action: Actions) => {
       break;
     case "TOGGLE_DOWNLOAD":
       {
-        const permIdx = state.contents.findIndex(
+        const permIdx = state.permissions.findIndex(
           (perm) => perm.id === action.permissionID
         );
         if (permIdx !== -1) {
-          const perm = state.contents[permIdx];
+          const perm = state.permissions[permIdx];
           const canView = !perm.canAdd ? true : perm.canView;
           newContents[permIdx] = {
             ...perm,
@@ -103,11 +103,11 @@ const reducer = (state: RoleDetails, action: Actions) => {
       break;
     case "TOGGLE_ALL":
       {
-        const permIdx = state.contents.findIndex(
+        const permIdx = state.permissions.findIndex(
           (perm) => perm.id === action.permissionID
         );
         if (permIdx !== -1) {
-          const perm = state.contents[permIdx];
+          const perm = state.permissions[permIdx];
           newContents[permIdx] = {
             ...perm,
             canAdd: action.on,

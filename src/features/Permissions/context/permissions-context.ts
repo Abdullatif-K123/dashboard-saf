@@ -15,7 +15,7 @@ export type PermissionsContextValue = {
 };
 
 const InitValue = {
-  role: { roleId: "", roleName: "", permissions: [] } as RoleDetails,
+  role: { roleId: "", roleName: "", permissions: [], name: "" } as RoleDetails,
   setQuery: () => {},
   getFilterPermissions: () => [],
   toggleAddPermission: (permissionID: string) => {

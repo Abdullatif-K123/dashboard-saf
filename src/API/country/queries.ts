@@ -37,8 +37,7 @@ const countryQueries = {
       [controllers.COUNTRY, "select"],
       () => countryAPI.getAllNp(),
       {
-        select: (res) =>
-          res.countries.map(({ id, cityName }) => ({ id, cityName })),
+        select: (res) => res.countries.map(({ id, name }) => ({ id, name })),
       }
     );
     console.log("QueryResult", queryResult);

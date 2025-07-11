@@ -4,14 +4,14 @@ export type CountryGetAllParams = PaginationParams;
 
 export type Country = {
   id: string;
-  cityName: string;
+  name: string;
   cityCount: number;
 };
 
 export type CountryUpdate = {
   countries: Country[];
 };
-export type CountrySelect = Pick<Country, "id" | "cityName">;
+export type CountrySelect = Pick<Country, "id" | "name">;
 export type CountryDetails = {
   id: string;
   name: string;

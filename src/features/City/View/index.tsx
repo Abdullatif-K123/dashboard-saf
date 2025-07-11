@@ -32,7 +32,7 @@ const CitiesTable: FC<Props> = ({}) => {
   });
   const { data } = infiniteQuery;
   const tableHeaders = useTableHeader();
-  const page = getPage(data, pageNumber);
+  const page = getPage(data, pageNumber) ?? [];
 
   const { hasDeletePermission, hasEditPermission } = useRoleContext();
   const permissionName = PermissionName.City;
@@ -56,26 +56,27 @@ const CitiesTable: FC<Props> = ({}) => {
       infiniteQuery={infiniteQuery}
     >
       <TableBody>
-        {page.map((row) => (
-          <TableRowStriped key={row.id}>
-            <TableCell>{row.name}</TableCell>
-            <TableCell>{row.countryName}</TableCell>
-            <TableCell>{row.regionCount}</TableCell>
-            <TableCell>
-              {!actionPermission && "-"}
-              {actionPermission && (
-                <ButtonsStack>
-                  {hasEditPermission(permissionName) && (
-                    <EditIconButton onClick={() => edit(row.id)} />
-                  )}
-                  {hasDeletePermission(permissionName) && (
-                    <RemoveIconButton onClick={() => remove(row.id)} />
-                  )}
-                </ButtonsStack>
-              )}
-            </TableCell>
-          </TableRowStriped>
-        ))}
+        {page &&
+          page.map((row) => (
+            <TableRowStriped key={row.id}>
+              <TableCell>{row.name}</TableCell>
+              <TableCell>{row.countryName}</TableCell>
+              <TableCell>{row.regionCount}</TableCell>
+              <TableCell>
+                {!actionPermission && "-"}
+                {actionPermission && (
+                  <ButtonsStack>
+                    {hasEditPermission(permissionName) && (
+                      <EditIconButton onClick={() => edit(row.id)} />
+                    )}
+                    {hasDeletePermission(permissionName) && (
+                      <RemoveIconButton onClick={() => remove(row.id)} />
+                    )}
+                  </ButtonsStack>
+                )}
+              </TableCell>
+            </TableRowStriped>
+          ))}
       </TableBody>
     </PaginationTable>
   );

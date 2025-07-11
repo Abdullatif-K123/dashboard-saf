@@ -17,6 +17,7 @@ const PermissionsTable = ({ sx }: { sx?: SxProps }) => {
   const { t } = useTranslation();
   const { getFilterPermissions } = usePermissionsContext();
   const filteredPermissions = getFilterPermissions();
+  console.log();
   return (
     <Stack sx={{ ...sx }}>
       <TableContainer sx={{ overflowX: "initial" }}>

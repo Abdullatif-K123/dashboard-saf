@@ -5,6 +5,7 @@ import { PermissionCheckbox } from "features/Permissions/PermissionsView/Permiss
 import usePermissionsContext from "features/Permissions/context/permissions-context";
 
 const Row = ({ data }: { data: Permission }) => {
+  console.log(data);
   const {
     toggleAddPermission,
     toggleDeletePermission,
@@ -24,6 +25,7 @@ const Row = ({ data }: { data: Permission }) => {
   const viewOnly =
     !hasEditPermission(PermissionName.Permission) &&
     !hasAddPermission(PermissionName.Permission);
+
   return (
     <TableRow>
       <TableCell>

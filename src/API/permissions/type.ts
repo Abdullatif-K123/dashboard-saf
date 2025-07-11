@@ -10,7 +10,6 @@ export interface Role {
 export interface NewRole {
   roleId: string;
   roleName: string;
-  data: Permission[];
 }
 export type Permission = {
   id: string;
@@ -44,7 +43,7 @@ export enum PermissionName {
   Customer = "Customer",
   Accounting = "Accounting",
   Account = "Account",
-  Setting = "Setting",
+  Setting = " Setting",
   Country = "Country",
   City = "City",
   Region = "Region",
@@ -54,7 +53,8 @@ export enum PermissionName {
 }
 
 export type RoleDetails = Omit<Role, "permissions"> & {
-  permissions: userRole[];
+  name: string;
+  permissions: Permission[];
 };
 
 export type RolePermissions = Permission[];

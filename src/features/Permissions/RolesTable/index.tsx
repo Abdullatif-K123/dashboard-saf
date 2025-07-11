@@ -24,7 +24,6 @@ const RolesTable = () => {
   const { data } = infiniteQuery;
   const tableHeaders = useTableHeader();
   const page = getPage(data, pageNumber);
-  console.log(page);
   return (
     <PaginationTable
       tableHead={

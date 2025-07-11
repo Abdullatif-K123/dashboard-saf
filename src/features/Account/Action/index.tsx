@@ -55,9 +55,13 @@ const AccountAction: FC<Props> = ({}) => {
 
   // Firing...
   const onSubmit = async (data: AccountActionBody) => {
+    const transformedData = {
+      ...data,
+      roles: data.roles.map((role) => role.roleId),
+    };
     console.log(data);
     try {
-      await accountAPI.action(data);
+      await accountAPI.action(transformedData);
       queryClient.invalidateQueries([controllers.CpUser, "all"]);
       queryClient.invalidateQueries([controllers.CpUser, id]);
       handleClose();
@@ -70,7 +74,6 @@ const AccountAction: FC<Props> = ({}) => {
   useEffect(() => {
     if (data) {
       reset(data);
-      setValue("roles", data?.rolesName);
       setValue("password", "");
     }
   }, [data, reset, setValue]);
@@ -82,7 +85,9 @@ const AccountAction: FC<Props> = ({}) => {
     return null;
   }
 
-  const { data: permissionData } = permissionsQueries.useGetRolePermissions();
+  const { data: permissionData } =
+    permissionsQueries.useGetRoleSelectPermissions();
+  console.log(permissionData);
 
   return (
     <Dialog open={isActive} onClose={handleClose} fullWidth maxWidth={"md"}>
@@ -143,10 +148,10 @@ const AccountAction: FC<Props> = ({}) => {
               </Grid>
               <Grid item xs={12} md={6}>
                 <RolesAutocompleteControlled
-                  name="userRoles"
+                  name="roles"
                   control={control}
                   required
-                  data={permissionData?.data}
+                  data={permissionData}
                 />
               </Grid>
               <Grid item xs={12} justifyContent="center" display="flex" mt={3}>

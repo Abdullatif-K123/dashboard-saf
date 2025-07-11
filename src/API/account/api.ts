@@ -4,6 +4,7 @@ import axiosInstance from "../axios";
 import {
   Account,
   AccountActionBody,
+  AccountActionBodyNext,
   AccountDetails,
   AccountGetAllParams,
   AccountLoginBody,
@@ -28,7 +29,7 @@ const get = async (id: string) => {
   );
   return data;
 };
-const action = async (body: AccountActionBody) => {
+const action = async (body: AccountActionBodyNext) => {
   await axiosInstance.post(API_ROUTES.ACCOUNT.ACTION, body);
 };
 

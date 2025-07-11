@@ -23,6 +23,8 @@ const PermissionsView = () => {
   const queryClient = useQueryClient();
   const { mutate, isLoading } = permissionsQueries.useAction();
 
+  console.log("role", role);
+  role.name = role.roleName;
   const handlePermissionsSubmit = () => {
     mutate(role, {
       onSuccess: () => {
@@ -44,7 +46,6 @@ const PermissionsView = () => {
     });
   };
   const { hasEditPermission } = useRoleContext();
-
   return (
     <Stack>
       <Head />

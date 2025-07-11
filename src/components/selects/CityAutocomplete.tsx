@@ -18,7 +18,7 @@ type Props = {
 const CityAutocomplete: FC<Props> = ({ countryId, ...props }) => {
   const { t } = useTranslation();
   const { data, isLoading } = cityQueries.useSelectQuery(countryId);
-  console.log(data);
+  console.log("data", data);
   return (
     <Autocomplete
       key={countryId}

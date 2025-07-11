@@ -1,5 +1,6 @@
 import { UserKind } from "constants/enums";
 import { PaginationParams } from "../../types/api";
+import { NewRole, userRole } from "API/permissions/type";
 
 export type AccountGetAllParams = PaginationParams;
 export type loginToken = {
@@ -37,10 +38,18 @@ export type AccountActionBody = {
   firstName: string;
   lastName: string;
   phoneNumber: string;
-  roles: UserKind[];
+  roles: NewRole[];
   password?: string;
 };
-
+export type AccountActionBodyNext = {
+  id?: string;
+  userName: string;
+  firstName: string;
+  lastName: string;
+  phoneNumber: string;
+  roles: string[];
+  password?: string;
+};
 export type AccountLoginBody = {
   userName: string;
   password: string;

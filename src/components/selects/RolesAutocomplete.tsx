@@ -1,16 +1,14 @@
 import Autocomplete from "@mui/material/Autocomplete/Autocomplete";
-import { AdminType } from "constants/enums";
 import { Control, Controller } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { enumToStringArray } from "../../utils/transforms";
 import TextField from "../Inputs/TextField";
-import { userRole } from "API/permissions/type";
+import { NewRole } from "API/permissions/type";
 
 interface ControlledProps {
   control: Control<any>;
   name: string;
   required?: boolean;
-  data?: userRole[]; // Changed to array of userRole
+  data?: NewRole[]; // Changed to array of userRole
 }
 
 export function RolesAutocompleteControlled({
@@ -20,11 +18,9 @@ export function RolesAutocompleteControlled({
   data,
 }: ControlledProps) {
   const { t } = useTranslation();
-
+  console.log(data);
   // Prepare options based on whether we have data or use enum fallback
-  const options = data
-    ? data
-    : enumToStringArray(AdminType).map((name) => ({ name }));
+  const options = data;
 
   return (
     <Controller
@@ -36,25 +32,22 @@ export function RolesAutocompleteControlled({
           ? field.value.map(
               (val) =>
                 typeof val === "string"
-                  ? { name: val } // Handle case where value is just string (from enum)
+                  ? { roleName: val } // Handle case where value is just string (from enum)
                   : val // Keep as is if it's already an object
             )
           : [];
-
+        console.log(value);
         return (
           <Autocomplete
-            options={options}
-            getOptionLabel={(option) =>
-              typeof option === "string"
-                ? t(`enum.AdminType.${option}`)
-                : option.name
-            }
+            options={options ?? []}
+            getOptionLabel={(option) => option.roleName}
             value={value}
             onChange={(_, newValue) => {
               field.onChange(newValue);
             }}
             isOptionEqualToValue={(option, value) =>
-              option.name === (typeof value === "string" ? value : value?.name)
+              option.roleName ===
+              (typeof value === "string" ? value : value?.roleName)
             }
             disableClearable
             multiple

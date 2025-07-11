@@ -9,7 +9,7 @@ let API_ROUTES = {
     ACTION: "Action",
     // "ActionCpUserAccount",
     LOGIN: "SignIn",
-    REMOVE: "RemoveCpAccount",
+    REMOVE: "Remove/Delete",
     GET_CSRF_TOKEN: "GetCsrfToken",
   },
   HOME: {
@@ -123,6 +123,7 @@ let API_ROUTES = {
     GET_ALL: "GetAll",
     GET_ROLE: "GetAllContents",
     GET: "GetDetails",
+    GET_SELECT: "GetAllRolesForSelect",
     ACTION: "Action",
     GET_PERMISSIONS: "GetRolePermissions",
   },

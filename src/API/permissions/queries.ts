@@ -44,5 +44,11 @@ const permissionsQueries = {
       () => permissionsAPI.getRolePermissions(),
       { staleTime: Infinity }
     ),
+  useGetRoleSelectPermissions: () =>
+    useQuery(
+      [controllers.PERMISSION, "role-select"],
+      () => permissionsAPI.getSelectPermissions(),
+      { staleTime: Infinity }
+    ),
 };
 export default permissionsQueries;

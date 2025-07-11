@@ -27,11 +27,11 @@ const getAllNp = async (params: RegionGetAllNpParams) => {
   );
   return data;
 };
-const get = async (regionId: string) => {
+const get = async (id: string) => {
   const { data } = await axiosInstance.get<RegionDetails>(
     API_ROUTES.REGION.GET,
     {
-      params: { regionId },
+      params: { id },
     }
   );
   return data;
