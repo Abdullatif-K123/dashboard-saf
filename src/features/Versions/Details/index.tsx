@@ -54,10 +54,10 @@ const VersionDetails: FC<Props> = ({}) => {
                   label={t("currentVersionLabel")}
                   sx={{ flexBasis: { xs: "100%" } }}
                 >
-                  {data?.currentVersion || <Skeleton />}
+                  {data?.data.currentVersion || <Skeleton />}
                 </LabelValue>
                 <LabelValue label={t("minimumVersionLabel")}>
-                  {data?.minimumVersion || <Skeleton />}
+                  {data?.data.minimumVersion || <Skeleton />}
                 </LabelValue>
               </DividedStack>
             </Stack>

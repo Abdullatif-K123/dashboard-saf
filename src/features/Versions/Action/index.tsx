@@ -60,7 +60,7 @@ const VersionAction: FC<Props> = () => {
   };
 
   useEffect(() => {
-    if (data) reset(data);
+    if (data) reset(data.data);
   }, [data, reset]);
   return (
     <Dialog open={isActive} onClose={handleClose} fullWidth maxWidth={"xs"}>
