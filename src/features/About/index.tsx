@@ -17,6 +17,7 @@ export type AboutProps = {};
 export const About: FC<AboutProps> = ({}) => {
   const { t } = useTranslation(undefined, { keyPrefix: "settings.about" });
   const query = settingsQueries.useAbout();
+
   const editorRef = useRef<EditorRef>(null);
   const errorSnackbar = useAxiosErrorSnackbar();
   const successSnackbar = useSuccessSnackbar();
@@ -32,6 +33,7 @@ export const About: FC<AboutProps> = ({}) => {
     }
     setLoading(false);
   };
+
   const { hasEditPermission } = useSettingsPermission();
   const editPermission = hasEditPermission();
   return (
@@ -40,7 +42,12 @@ export const About: FC<AboutProps> = ({}) => {
         <Stack alignItems={"center"} gap={1} minHeight="70vh">
           {editPermission && (
             <>
-              <Editor initial={query.data ?? ""} preview html ref={editorRef} />
+              <Editor
+                initial={query.data?.aboutApp ?? ""}
+                preview
+                html
+                ref={editorRef}
+              />
               <Submit
                 isSubmitting={loading}
                 sx={{ width: "fit-content", mt: "auto" }}
@@ -55,7 +62,7 @@ export const About: FC<AboutProps> = ({}) => {
               sx={{ p: 3 }}
               width="100%"
             >
-              {parse(query.data ?? "ـــــ")}
+              {parse(query.data?.aboutApp ?? "ـــــ")}
             </Typography>
           )}
         </Stack>

@@ -25,10 +25,13 @@ import EditIconButton from "components/buttons/EditIconButton";
 type Props = {};
 const VersionTable: FC<Props> = ({}) => {
   const { details, remove, edit } = useEventSearchParams();
-  const { data, isLoading, isSuccess } = versionQueries.useVersionGetAll();
+  const {
+    data: versions,
+    isLoading,
+    isSuccess,
+  } = versionQueries.useVersionGetAll();
 
-  const isEmpty = isSuccess && !data;
-  console.log(data);
+  const isEmpty = isSuccess && !versions;
   const tableHeader = useTableHeader();
   return (
     <Paper
@@ -60,8 +63,8 @@ const VersionTable: FC<Props> = ({}) => {
               </RepeatELement>
             )}
 
-            {Array.isArray(data) &&
-              data.map((row) => (
+            {Array.isArray(versions) &&
+              versions.map((row) => (
                 <TableRowStriped key={row.id}>
                   <TableCell align="center">{row.currentVersion}</TableCell>
                   <TableCell align="center">{row.minimumVersion}</TableCell>
@@ -82,7 +85,7 @@ const VersionTable: FC<Props> = ({}) => {
         </TableContainer>
         <Box sx={{ mx: "auto", my: 1, width: "min(90% ,300px)" }}>
           {isLoading && <Loading />}
-          {!data && !isLoading && <NoData />}
+          {!versions && !isLoading && <NoData />}
           {isEmpty && <NoData />}
         </Box>
       </Stack>

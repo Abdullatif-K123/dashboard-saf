@@ -13,7 +13,7 @@ const getAll = async (params: RegionGetAllParams) => {
   const { data } = await axiosInstance.get<Pagination<Region>>(
     API_ROUTES.REGION.GET_ALL,
     {
-      params,
+      ...(params.cityId && params.countryId && { params }),
     }
   );
   return data;

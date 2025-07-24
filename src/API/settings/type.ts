@@ -1,5 +1,5 @@
-export type About = string | null;
-export type Policy = string | null;
+export type About = { aboutApp: string | null };
+export type Policy = { policy: string | null };
 
 export type CompanyRatio = {
   companyRatio: number;

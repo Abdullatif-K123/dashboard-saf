@@ -29,7 +29,7 @@ const companyRatioGet = async () => {
 };
 
 const policyAction = async (params: PolicyActionParams) => {
-  const { data } = await axiosInstance.post<true>(
+  const { data } = await axiosInstance.put<true>(
     API_ROUTES.SETTINGS.ACTION_POLICY,
     params
   );
@@ -37,14 +37,14 @@ const policyAction = async (params: PolicyActionParams) => {
 };
 
 const aboutAction = async (params: AboutActionParams) => {
-  const { data } = await axiosInstance.post<true>(
+  const { data } = await axiosInstance.put<true>(
     API_ROUTES.SETTINGS.ACTION_ABOUT,
     params
   );
   return data;
 };
 const companyRatioAction = async (params: CompanyRatioActionParams) => {
-  const { data } = await axiosInstance.post<true>(
+  const { data } = await axiosInstance.put<true>(
     API_ROUTES.SETTINGS.ACTION_COMPANY_RATIO,
     params
   );
@@ -53,7 +53,7 @@ const companyRatioAction = async (params: CompanyRatioActionParams) => {
 const settingsAPI = {
   policyAction,
   policyGet,
-  companyRatioGet, 
+  companyRatioGet,
   aboutAction,
   aboutGet,
   companyRatioAction,

@@ -43,7 +43,7 @@ export enum PermissionName {
   Customer = "Customer",
   Accounting = "Accounting",
   Account = "Account",
-  Setting = " Setting",
+  Setting = "Setting",
   Country = "Country",
   City = "City",
   Region = "Region",

@@ -45,7 +45,7 @@ const PermissionsView = () => {
       },
     });
   };
-  const { hasEditPermission } = useRoleContext();
+  const { hasEditPermission, hasDeletePermission } = useRoleContext();
   return (
     <Stack>
       <Head />

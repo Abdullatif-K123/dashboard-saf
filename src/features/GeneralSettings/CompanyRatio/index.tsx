@@ -56,6 +56,14 @@ export const CompanyRatio = ({ data }: CompanyRatioProps) => {
           type="number"
           InputProps={{ endAdornment: "SYP" }}
         />
+        <TextFieldControlled
+          sx={{ height: 50 }}
+          control={control}
+          name="fromOwnerRatio"
+          label={t(`fromOwnerRatio`)}
+          type="number"
+          InputProps={{ endAdornment: "SYP" }}
+        />
         <Submit isSubmitting={isSubmitting} size="small" />
       </Stack>
     </form>

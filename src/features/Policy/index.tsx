@@ -41,7 +41,12 @@ export const Policy: FC<PolicyProps> = ({}) => {
         <Stack alignItems={"center"} gap={1} minHeight="70vh">
           {editPermission && (
             <>
-              <Editor initial={query.data ?? ""} preview html ref={editorRef} />
+              <Editor
+                initial={query.data?.policy ?? ""}
+                preview
+                html
+                ref={editorRef}
+              />
               <Submit
                 isSubmitting={loading}
                 sx={{ width: "fit-content", mt: "auto" }}
@@ -56,7 +61,7 @@ export const Policy: FC<PolicyProps> = ({}) => {
               sx={{ p: 3 }}
               width="100%"
             >
-              {parse(query.data ?? "ـــــ")}
+              {parse(query.data?.policy ?? "ـــــ")}
             </Typography>
           )}
         </Stack>

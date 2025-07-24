@@ -23,7 +23,7 @@ const Head = () => {
             border: "1px solid #c9c9c9",
           }}
         >
-          {role.name}
+          {role.roleName}
         </Typography>
       </Stack>
       <Stack gap={1} flex={1} sx={{ minWidth: 150 }}>

@@ -1,5 +1,6 @@
 import { PermissionName } from "API/permissions/type";
 import EditIconButton from "components/buttons/EditIconButton";
+import RemoveIconButton from "components/buttons/RemoveIconButton";
 import ShowIconButton from "components/buttons/ShowIconButton";
 import { useRoleContext } from "context/RolePermissionsContext";
 import useEventSearchParams from "hooks/useEventSearchParams";
@@ -9,7 +10,7 @@ type Props = {
 };
 
 const ActionButton = ({ id }: Props) => {
-  const { edit } = useEventSearchParams();
+  const { edit, remove } = useEventSearchParams();
   const { hasEditPermission, hasAddPermission } = useRoleContext();
   const viewOnly =
     !hasEditPermission(PermissionName.Permission) &&
@@ -17,7 +18,12 @@ const ActionButton = ({ id }: Props) => {
   if (viewOnly) {
     return <ShowIconButton onClick={() => edit(id)} />;
   }
-  return <EditIconButton onClick={() => edit(id)} />;
+  return (
+    <>
+      <EditIconButton onClick={() => edit(id)} />
+      <RemoveIconButton onClick={() => remove(id)} />
+    </>
+  );
 };
 
 export default ActionButton;

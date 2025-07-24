@@ -30,7 +30,6 @@ export type NavLink = {
   icon: ReactNode;
   children?: NavLink[];
 };
-
 export const HomeLink: NavLink = {
   href: "",
   permissionName: "No_Permission_Needed",

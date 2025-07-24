@@ -54,6 +54,7 @@ const CitiesTable: FC<Props> = ({}) => {
       cellCount={tableHeaders.length}
       pageNumber={pageNumber}
       infiniteQuery={infiniteQuery}
+      
     >
       <TableBody>
         {page &&
@@ -77,6 +78,7 @@ const CitiesTable: FC<Props> = ({}) => {
               </TableCell>
             </TableRowStriped>
           ))}
+          
       </TableBody>
     </PaginationTable>
   );

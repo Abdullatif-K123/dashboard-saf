@@ -15,10 +15,12 @@ const PermissionAction = () => {
   const { t } = useTranslation();
   const { data, isLoading, isSuccess, isError, error } =
     permissionsQueries.useDetailsQuery(id ? id : "");
-  const { hasEditPermission, hasAddPermission } = useRoleContext();
+  const { hasEditPermission, hasAddPermission, hasDeletePermission } =
+    useRoleContext();
   const viewOnly =
     !hasEditPermission(PermissionName.Permission) &&
-    !hasAddPermission(PermissionName.Permission);
+    !hasAddPermission(PermissionName.Permission) &&
+    !hasDeletePermission(PermissionName.Permission);
   return (
     <Dialog
       open={isActive}
@@ -27,7 +29,11 @@ const PermissionAction = () => {
       maxWidth={"sm"}
     >
       <DialogTitle fontSize={30} color="primary">
-        {viewOnly ? t("permissions.root") : t("permissions.editePermissions")}
+        {viewOnly
+          ? t("permissions.root")
+          : hasDeletePermission(PermissionName.Permission)
+          ? t("permissions.removePermissions")
+          : t("permissions.editePermissions")}
       </DialogTitle>
       <DialogContent>
         {isSuccess && data && (

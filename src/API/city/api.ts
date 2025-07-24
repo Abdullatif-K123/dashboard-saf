@@ -4,9 +4,12 @@ import axiosInstance from "../axios";
 import { City, CityActionBody, CityDetails, CityGetAllParams } from "./type";
 
 const getAll = async (params: CityGetAllParams) => {
-  const { data } = await axiosInstance.get<Pagination<City>>(API_ROUTES.CITY.GET_ALL, {
-    params,
-  });
+  const { data } = await axiosInstance.get<Pagination<City>>(
+    API_ROUTES.CITY.GET_ALL,
+    {
+      ...(params.countryId && { params }),
+    }
+  );
   return data;
 };
 
@@ -18,7 +21,9 @@ const get = async (cityId: string) => {
 };
 const getAllNp = async (countryId: string | null) => {
   const { data } = await axiosInstance.get<City[]>(API_ROUTES.CITY.GET_SELECT, {
-    params: { countryId },
+    params: {
+      ...(countryId && { countryId }),
+    },
   });
   return data;
 };
