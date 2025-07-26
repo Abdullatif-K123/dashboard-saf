@@ -125,6 +125,7 @@ let API_ROUTES = {
     GET: "GetDetails",
     GET_SELECT: "GetAllRolesForSelect",
     ACTION: "Action",
+    REMOVE: "DeleteRole",
     GET_PERMISSIONS: "GetRolePermissions",
   },
 } as const;

@@ -514,9 +514,11 @@
     "deletePermission": "حذف",
     "downloadPermission": "تحميل",
     "viewPermission": "عرض",
+    "remove": "هل انت متاكد من حذف هذه الصلاحيه",
     "message": {
       "edit": "تم تعديل الصلاحيات بنجاح",
-      "noSearchResult": "لا يوجد صلاحيات مطابقة"
+      "noSearchResult": "لا يوجد صلاحيات مطابقة",
+      "remove": "تم حذف الصلاحيه بنجاح"
     }
   }
 }

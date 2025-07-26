@@ -55,6 +55,12 @@ const getRolePermissions = async () => {
   );
   return data;
 };
+const remove = async (id: string) => {
+  const { data } = await axiosInstance.delete(API_ROUTES.PERMISSION.REMOVE, {
+    data: { id },
+  });
+  return data;
+};
 
 const permissionsAPI = {
   getAll,
@@ -63,6 +69,7 @@ const permissionsAPI = {
   getPermissions,
   getRolePermissions,
   getSelectPermissions,
+  remove,
 };
 
 export default permissionsAPI;

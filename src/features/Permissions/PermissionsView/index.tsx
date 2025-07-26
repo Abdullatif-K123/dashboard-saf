@@ -23,7 +23,6 @@ const PermissionsView = () => {
   const queryClient = useQueryClient();
   const { mutate, isLoading } = permissionsQueries.useAction();
 
-  console.log("role", role);
   role.name = role.roleName;
   const handlePermissionsSubmit = () => {
     mutate(role, {
@@ -45,23 +44,24 @@ const PermissionsView = () => {
       },
     });
   };
-  const { hasEditPermission, hasDeletePermission } = useRoleContext();
+  const { hasEditPermission, hasAddPermission } = useRoleContext();
   return (
     <Stack>
       <Head />
       <PermissionsTable sx={{ my: 2 }} />
-      {hasEditPermission(PermissionName.Permission) && (
-        <Stack direction="row" gap={2}>
-          <Button
-            disabled={isLoading}
-            variant="contained"
-            onClick={handlePermissionsSubmit}
-          >
-            {isLoading ? <Loading size={20} /> : t("generic.submit")}
-          </Button>
-          <Button onClick={clearActionParams}>{t("generic.cancel")}</Button>
-        </Stack>
-      )}
+      {hasEditPermission(PermissionName.Permission) ||
+        (hasAddPermission(PermissionName.Permission) && (
+          <Stack direction="row" gap={2}>
+            <Button
+              disabled={isLoading}
+              variant="contained"
+              onClick={handlePermissionsSubmit}
+            >
+              {isLoading ? <Loading size={20} /> : t("generic.submit")}
+            </Button>
+            <Button onClick={clearActionParams}>{t("generic.cancel")}</Button>
+          </Stack>
+        ))}
     </Stack>
   );
 };

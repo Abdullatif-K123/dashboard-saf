@@ -22,6 +22,7 @@ const Head = () => {
             borderRadius: "20px",
             border: "1px solid #c9c9c9",
           }}
+          component="input"
         >
           {role.roleName}
         </Typography>

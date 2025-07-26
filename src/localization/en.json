@@ -495,7 +495,7 @@
       "submitButton": "Submit",
       "message": {
         "add": "Version information added successfully",
-        "edit": "Versoin information updated successfully",
+        "edit": "Version information updated successfully",
         "remove": "Version has been deleted successfully"
       }
     }
@@ -511,9 +511,11 @@
     "deletePermission": "Delete",
     "downloadPermission": "Download",
     "viewPermission": "View",
+    "remove": "Remove",
     "message": {
       "edit": "Permissions edited successfully",
-      "noSearchResult": "No matching permissions"
+      "noSearchResult": "No matching permissions",
+      "remove": "Permission has been deleted successfully"
     }
   }
 }
